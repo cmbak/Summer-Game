@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed;
+    //public LayerMask groundLayer;
+    //public RigidBody rb;
+    public bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
