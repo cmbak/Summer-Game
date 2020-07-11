@@ -15,4 +15,18 @@ public class GroundCheck : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(collision.collider.tag == "Ground") 
+        {
+
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        if(collision.collider.tag == "Ground")
+        {
+
+        }
+    }
 }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    GameObject player;
     public float speed;
     //public LayerMask groundLayer;
     //public RigidBody rb;
-    public bool isGrounded = true;
+    public bool isGrounded = false;
 
     // Start is called before the first frame update
     void Start()
