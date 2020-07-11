@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = gameObject.transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -16,17 +17,17 @@ public class GroundCheck : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.collider.tag == "Ground") 
         {
-
-        }
+            player.GetComponent<PlayerMovement>().isGrounded = true;
+        } 
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
+    private void OnCollisionExit2D(Collision2D collision) {
         if(collision.collider.tag == "Ground")
         {
-
+            player.GetComponent<PlayerMovement>().isGrounded = false;
         }
     }
 }

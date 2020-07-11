@@ -364,6 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102563988}
   - component: {fileID: 1102563989}
+  - component: {fileID: 1102563990}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -411,6 +412,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5005789, y: 0.010383129}
   m_EdgeRadius: 0
+--- !u!114 &1102563990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102563987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0717d77cd1647bc46971a2b38c1b58a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1173253271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1172,7 @@ GameObject:
   - component: {fileID: 1183257616}
   - component: {fileID: 1183257615}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1293,6 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 5
   isGrounded: 1
 --- !u!50 &1281833862
 Rigidbody2D:

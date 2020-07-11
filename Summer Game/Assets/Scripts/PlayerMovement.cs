@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    GameObject player;
     public float speed;
+    public float jumpForce;
     //public LayerMask groundLayer;
     //public RigidBody rb;
     public bool isGrounded = false;
@@ -34,5 +34,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.localScale = characterScale;
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
     }
 }
