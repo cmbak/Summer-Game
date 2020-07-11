@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     public float jumpForce;
+    private Rigidbody2D rb;
+    private SpriteRenderer sprite;
     //public LayerMask groundLayer;
     //public RigidBody rb;
     public bool isGrounded = false;
@@ -14,7 +16,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         rb = GetComponent<Rigidbody2D>();
+         sprite = GetComponent<SpriteRenderer>();
+         isGrounded = true; //change if needed
     }
 
     // Update is called once per frame
@@ -35,9 +39,9 @@ public class PlayerMovement : MonoBehaviour
 
         transform.localScale = characterScale;
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
 }
