@@ -5,21 +5,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    public int amountOfDoubleJumps;
+    public bool canDoubleJump; //change to private after
     public float speed;
     public int amountOfCoins;
     public float jumpForce;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
-    //public LayerMask groundLayer;
-    //public RigidBody rb;
     public bool isGrounded = false;
 
     // Start is called before the first frame update
     void Start()
     {
-         rb = GetComponent<Rigidbody2D>();
-         sprite = GetComponent<SpriteRenderer>();
-         isGrounded = true; //change if needed
+        rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        isGrounded = true; 
+        canDoubleJump = true;
+        amountOfDoubleJumps = 1;
     }
 
     // Update is called once per frame
@@ -43,8 +45,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        } 
+        else if (Input.GetButtonDown("Jump") && isGrounded == false && canDoubleJump == true && amountOfDoubleJumps > 0) //simplify /split conditionals into multiple if statements
+        {
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            amountOfDoubleJumps --;
+            canDoubleJump = false;
+            
         }
-
-        //on collision with coins
     }
 }

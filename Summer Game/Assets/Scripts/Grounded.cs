@@ -5,10 +5,12 @@ using UnityEngine;
 public class Grounded : MonoBehaviour
 {   
     private GameObject Player;
+    private PlayerController playerScript;
     // Start is called before the first frame update
     void Start()
     {
         Player = gameObject.transform.parent.gameObject;
+        playerScript = Player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -20,14 +22,16 @@ public class Grounded : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Ground")
         {
-            Player.GetComponent<PlayerController>().isGrounded = true;
+            playerScript.isGrounded = true;
+            playerScript.canDoubleJump = true;
+            playerScript.amountOfDoubleJumps ++;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.collider.tag == "Ground")
         {
-            Player.GetComponent<PlayerController>().isGrounded = false;
+            playerScript.isGrounded = false;
         }
     }
 }
