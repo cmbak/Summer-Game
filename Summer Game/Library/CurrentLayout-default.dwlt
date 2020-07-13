@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 110
+  controlID: 70
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 111
+  controlID: 71
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 112
+  controlID: 116
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14566
+  m_LastSelectedObjectID: 14784
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -482,19 +482,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Players
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Players
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\chikm\Desktop\Summer-Game\Summer Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 56}
-    m_SelectedIDs: 3a3b0000
-    m_LastClickedID: 15162
+    m_SelectedIDs: 343b0000
+    m_LastClickedID: 15156
     m_ExpandedIDs: 000000000c3b00000e3b0000103b0000123b0000143b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 462
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -648,7 +648,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: c0390000
       m_LastClickedID: 14784
-      m_ExpandedIDs: 5efbffff
+      m_ExpandedIDs: 5efbffff9a390000ac390000ba390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -708,9 +708,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4087005, y: -1.0888464, z: 0.65264153}
+    m_Target: {x: -3.4709458, y: -1.3136729, z: 0.316119}
     speed: 2
-    m_Value: {x: -2.2509203, y: -1.0453329, z: 0.6649124}
+    m_Value: {x: -3.4709458, y: -1.3136729, z: 0.316119}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -760,9 +760,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.2573926
+    m_Target: 1.8436427
     speed: 2
-    m_Value: 3.4108822
+    m_Value: 1.8436427
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -859,18 +859,18 @@ MonoBehaviour:
       y: 21
       width: 1021
       height: 412
-    m_Scale: {x: 1.0837984, y: 1.0837984}
-    m_Translation: {x: 510.5, y: 206}
+    m_Scale: {x: 5, y: 5}
+    m_Translation: {x: 510.49988, y: 206}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -471.02856
-      y: -190.07225
-      width: 942.0571
-      height: 380.1445
+      x: -102.099976
+      y: -41.2
+      width: 204.2
+      height: 82.4
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1276.25, y: 541.25}
