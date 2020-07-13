@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     public float speed;
+    public int amountOfCoins;
     public float jumpForce;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -43,5 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
+
+        //on collision with coins
     }
 }
