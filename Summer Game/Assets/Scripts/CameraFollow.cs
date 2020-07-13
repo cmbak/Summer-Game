@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public float offsetX = 2;
+    public float offset = 2;
     private Transform playerTransform; //player movement
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,8 @@ public class CameraFollow : MonoBehaviour
         //Current position of camera - can't modify position of camera directly
         Vector3 tempPosition = transform.position;  
         //Set camera's x to the x of the player
-        tempPosition.x = playerTransform.position.x + offsetX;  
+        tempPosition.x = playerTransform.position.x + offset;
+        tempPosition.y = playerTransform.position.y + offset;  
 
         transform.position = tempPosition;
     }
