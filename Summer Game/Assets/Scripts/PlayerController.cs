@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
     public bool canDoubleJump;
     public float speed;
     public float jumpForce;
-    private Rigidbody2D rb;
     public bool isGrounded = false;
+    private Rigidbody2D rb;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += horizontal * Time.deltaTime * speed;
+
+        animator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
         Vector3 characterScale = transform.localScale;
         if(Input.GetAxis("Horizontal") > 0) //Moving right

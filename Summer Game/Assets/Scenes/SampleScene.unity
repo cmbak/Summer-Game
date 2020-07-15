@@ -1420,9 +1420,9 @@ MonoBehaviour:
   amountOfDoubleJumps: 0
   canDoubleJump: 0
   speed: 5
-  amountOfCoins: 0
   jumpForce: 5
   isGrounded: 0
+  animator: {fileID: 1281833864}
 --- !u!50 &1281833862
 Rigidbody2D:
   serializedVersion: 4
