@@ -25,6 +25,7 @@ public class Grounded : MonoBehaviour
             playerScript.isGrounded = true;
             playerScript.canDoubleJump = true;
             playerScript.amountOfDoubleJumps ++;
+            playerScript.animator.SetBool("isJumping", false);
         }
     }
 
