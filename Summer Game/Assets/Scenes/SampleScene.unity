@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 377225222}
   - component: {fileID: 377225225}
-  - component: {fileID: 377225224}
   - component: {fileID: 377225223}
   m_Layer: 0
   m_Name: Coin 3
@@ -173,22 +172,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &377225224
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377225221}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.08680928, y: -0.23035598}
-  serializedVersion: 2
-  m_Radius: 1.6248819
 --- !u!212 &377225225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1735,7 +1718,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1539784284}
   - component: {fileID: 1539784283}
-  - component: {fileID: 1539784285}
   - component: {fileID: 1539784286}
   m_Layer: 0
   m_Name: Coin
@@ -1809,22 +1791,6 @@ Transform:
   m_Father: {fileID: 690020157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1539784285
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539784281}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.08680928, y: -0.23035598}
-  serializedVersion: 2
-  m_Radius: 1.6248819
 --- !u!95 &1539784286
 Animator:
   serializedVersion: 3
@@ -1854,7 +1820,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1724210717}
   - component: {fileID: 1724210720}
-  - component: {fileID: 1724210719}
   - component: {fileID: 1724210718}
   m_Layer: 0
   m_Name: Coin 2
@@ -1896,22 +1861,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &1724210719
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724210716}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.08680928, y: -0.23035598}
-  serializedVersion: 2
-  m_Radius: 1.6248819
 --- !u!212 &1724210720
 SpriteRenderer:
   m_ObjectHideFlags: 0
