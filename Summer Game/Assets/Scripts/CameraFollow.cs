@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position = new Vector3( (Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x)),
             (Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y)),
