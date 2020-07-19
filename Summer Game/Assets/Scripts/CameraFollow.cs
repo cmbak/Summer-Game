@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothTimeX = 5;
     public float smoothTimeY = 5;
 
+    public bool wantBounds;
     public Vector3 minCameraPos;
     public Vector3 maxCameraPos;
     private Transform playerTransform; //player movement
@@ -19,10 +20,12 @@ public class CameraFollow : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        transform.position = new Vector3( (Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x)),
+    {   
+        if (wantBounds){
+            transform.position = new Vector3( (Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x)),
             (Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y)),
             (Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z)));
+        }
     }
 
     void LateUpdate()
