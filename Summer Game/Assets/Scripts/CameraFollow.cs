@@ -8,6 +8,9 @@ public class CameraFollow : MonoBehaviour
     private Vector2 velocity;
     public float smoothTimeX = 5;
     public float smoothTimeY = 5;
+
+    public Vector3 minCameraPos;
+    public Vector3 maxCameraPos;
     private Transform playerTransform; //player movement
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,13 @@ public class CameraFollow : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    
+    void Update()
+    {
+        transform.position = new Vector3( (Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x)),
+            (Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y)),
+            (Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z)));
+    }
+
     void LateUpdate()
     {
 
