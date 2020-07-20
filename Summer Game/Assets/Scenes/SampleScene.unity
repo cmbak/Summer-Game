@@ -2091,6 +2091,7 @@ GameObject:
   - component: {fileID: 2090153415}
   - component: {fileID: 2090153414}
   - component: {fileID: 2090153413}
+  - component: {fileID: 2090153416}
   m_Layer: 0
   m_Name: Blobby
   m_TagString: Untagged
@@ -2200,3 +2201,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2090153416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090153411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a71787520b948a46a10f59ae89486a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1281833858}
+  rigid2d: {fileID: 2090153414}
+  moveSpeed: 1
+  attackRange: 5
