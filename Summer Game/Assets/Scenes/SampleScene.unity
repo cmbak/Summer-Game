@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTimeX: 0.05
   smoothTimeY: 0.05
+  wantBounds: 1
   minCameraPos: {x: -100, y: -2.22, z: -10}
   maxCameraPos: {x: 100, y: -0.14, z: -10}
 --- !u!20 &519420031
