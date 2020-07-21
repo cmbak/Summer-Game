@@ -15,12 +15,23 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         //rigid2d.GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {  
+        Vector3 enemyTransform = transform.localScale;
+        if (facingRight == true) 
+        {
+            enemyTransform.x = 1;
+            transform.localScale = enemyTransform;
+        } else if (facingRight == false)
+        {
+            enemyTransform.x = -1;
+            transform.localScale = enemyTransform;
+        }
+
+
         float distanceToPlayer = Vector2.Distance(transform.position, Player.transform.position);
         //print(distanceToPlayer);     
 
@@ -38,17 +49,21 @@ public class EnemyAI : MonoBehaviour
 
     void chasePlayer()
     {
-
+        Vector3 enemyTransform = transform.localScale;
         if (transform.position.x > Player.transform.position.x) //Enemy is to the right of the player
         {
+            //enemyTransform.x = -1;
             rigid2d.velocity = new Vector2(-moveSpeed, 0);
             facingRight = false;
+            
             
         }
         else if (transform.position.x < Player.transform.position.x) //Enemy is to the left of the player
         {
+            //enemyTransform.x = 1;
             rigid2d.velocity = new Vector2(moveSpeed, 0);
             facingRight = true;
+            
         }
     }
 }
