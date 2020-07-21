@@ -36,11 +36,11 @@ public class EnemyAI : MonoBehaviour
     {
         if (transform.position.x > Player.transform.position.x) //Enemy is to the right of the player
         {
-            rigid2d.velocity = new Vector2(moveSpeed, 0);
+            rigid2d.velocity = new Vector2(-moveSpeed, 0);
         }
         else if (transform.position.x < Player.transform.position.x) //Enemy is to the left of the player
         {
-            rigid2d.velocity = new Vector2(-moveSpeed, 0);
+            rigid2d.velocity = new Vector2(moveSpeed, 0);
         }
     }
 }
