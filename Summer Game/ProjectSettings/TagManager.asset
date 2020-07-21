@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Coin
+  - Blobby
   layers:
   - Default
   - TransparentFX
