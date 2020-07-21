@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rigid2d.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -49,21 +49,16 @@ public class EnemyAI : MonoBehaviour
 
     void chasePlayer()
     {
-        Vector3 enemyTransform = transform.localScale;
         if (transform.position.x > Player.transform.position.x) //Enemy is to the right of the player
         {
-            //enemyTransform.x = -1;
             rigid2d.velocity = new Vector2(-moveSpeed, 0);
             facingRight = false;
-            
-            
         }
         else if (transform.position.x < Player.transform.position.x) //Enemy is to the left of the player
         {
-            //enemyTransform.x = 1;
             rigid2d.velocity = new Vector2(moveSpeed, 0);
             facingRight = true;
-            
+
         }
     }
 }
