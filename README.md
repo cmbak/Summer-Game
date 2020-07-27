@@ -1,3 +1,6 @@
 # Summer-Game
-##My Website
-[Don't forget to visit my website :D ] (https://chikarambakwe.com)
+
+## About
+
+## Website
+Don't forget to visit my [website](https://chikarambakwe.com)
