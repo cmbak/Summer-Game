@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     public bool facingRight;
     public Transform castPoint;
     private bool isAggro;
+    private bool isSearching;
     
     
     // Start is called before the first frame update
@@ -37,17 +38,24 @@ public class EnemyAI : MonoBehaviour
         if (CanSeePlayer(attackRange))
         {
             isAggro = true;
-            chasePlayer();
         }
         else
         {
             if(isAggro)
             {
-                isAggro = false;
-                Invoke("stopChasingPlayer", 3);
+                if (!isSearching)
+                {
+                    isSearching = true;
+                    Invoke("stopChasingPlayer", 3); //see if more efficient way of delaying this
 
+                }
             }
 
+        }
+
+        if (isAggro)
+        {
+            chasePlayer();
         }
     }
 
@@ -101,6 +109,7 @@ public class EnemyAI : MonoBehaviour
     void stopChasingPlayer()
     {
         isAggro = false;
+        isSearching = false;
         rigid2d.velocity = new Vector2(0, 0);
 
     }
