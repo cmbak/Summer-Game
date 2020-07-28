@@ -48,6 +48,15 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    bool CanSeePlayer(float distance)
+    {
+        
+        /*float raycastDistance = distance;
+        Vector2 endPos = transform.position +
+        RaycastHit2D hit = Linecast(transform.position, )
+        //return true;*/
+    }
+     
     void chasePlayer()
     {
         if (transform.position.x > Player.transform.position.x) //Enemy is to the right of the player
