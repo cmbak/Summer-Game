@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public float actualSpeed;
     public float attackRange;
     public bool facingRight;
+    public Transform castPoint;
     
     
     // Start is called before the first frame update
@@ -51,10 +52,11 @@ public class EnemyAI : MonoBehaviour
     bool CanSeePlayer(float distance)
     {
         
-        /*float raycastDistance = distance;
-        Vector2 endPos = transform.position +
-        RaycastHit2D hit = Linecast(transform.position, )
-        //return true;*/
+        float raycastDistance = distance;
+        Vector2 endPos = castPoint.position + Vector3.right * raycastDistance;
+        RaycastHit2D hit = Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action")); //Layer Masking being what colliders to detect on the 'Action' Layer
+        
+        return true;
     }
      
     void chasePlayer()
