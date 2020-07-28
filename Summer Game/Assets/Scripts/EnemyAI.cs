@@ -34,29 +34,32 @@ public class EnemyAI : MonoBehaviour
         }
 
 
-        float distanceToPlayer = Vector2.Distance(transform.position, Player.transform.position);
-        //print(distanceToPlayer);     
-
-        if (distanceToPlayer < attackRange) 
-        {
-            // Chase player
-            chasePlayer();
-        }  
-        else 
-        {
-            //stop chasing player
-            rigid2d.velocity = new Vector2(0, 0);
-        }
+        
     }
 
     bool CanSeePlayer(float distance)
     {
-        
+        bool seesPlayer = false;
         float raycastDistance = distance;
         Vector2 endPos = castPoint.position + Vector3.right * raycastDistance;
         RaycastHit2D hit = Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action")); //Layer Masking being what colliders to detect on the 'Action' Layer
         
-        return true;
+        if(hit.collider != null)
+        {
+            if(hit.collider.gameObject.CompareTag("Player"))
+            {
+                //Aggravate enemy
+                chasePlayer();
+                seesPlayer = true;
+            }
+            else
+            {
+                rigid2d.velocity = new Vector2(0, 0);
+                seesPlayer = false;
+
+            }
+        }
+        return seesPlayer;
     }
      
     void chasePlayer()
@@ -72,4 +75,6 @@ public class EnemyAI : MonoBehaviour
             facingRight = true;
         }
     }
+
+    
 }
