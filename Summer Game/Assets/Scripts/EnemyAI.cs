@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool facingRight;
     public Transform castPoint;
+    private bool isAggro;
     
     
     // Start is called before the first frame update
@@ -35,11 +36,17 @@ public class EnemyAI : MonoBehaviour
 
         if (CanSeePlayer(attackRange))
         {
+            isAggro = true;
             chasePlayer();
         }
         else
         {
-            rigid2d.velocity = new Vector2(0, 0);
+            if(isAggro)
+            {
+                isAggro = false;
+                Invoke("stopChasingPlayer", 3);
+
+            }
 
         }
     }
@@ -49,8 +56,13 @@ public class EnemyAI : MonoBehaviour
         bool seesPlayer = false;
         float raycastDistance = distance;
 
+        if (facingRight == false) //if facing left
+        {
+            raycastDistance = -distance; //reverse direction of raycast
+        }
+
         Vector2 endPos = castPoint.position + Vector3.right * raycastDistance;
-        RaycastHit2D hit = Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action")); //Layer Masking being what colliders to detect on the 'Action' Layer
+        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action")); //Layer Masking being what colliders to detect on the 'Action' Layer
         
         if(hit.collider != null)
         {
@@ -62,9 +74,13 @@ public class EnemyAI : MonoBehaviour
             else
             {
                 seesPlayer = false;
-
             }
+            //Debug.DrawLine(castPoint.position, hit.point, Color.green, 10.0f);
         }
+        /*else
+        {
+            Debug.DrawLine(castPoint.position, endPos, Color.blue, 10.0f);
+        }*/
         return seesPlayer;
     }
      
@@ -80,6 +96,13 @@ public class EnemyAI : MonoBehaviour
             transform.Translate(actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
             facingRight = true;
         }
+    }
+
+    void stopChasingPlayer()
+    {
+        isAggro = false;
+        rigid2d.velocity = new Vector2(0, 0);
+
     }
 
     
