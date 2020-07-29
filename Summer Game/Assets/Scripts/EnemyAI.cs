@@ -27,10 +27,21 @@ public class EnemyAI : MonoBehaviour
     {  
         Vector3 enemyTransform = transform.localScale;
         
-        //Ground Detection + Movement
-        RaycastHit2D groundDetection = Physics2D.RaycastHit2D(groundDetector.position, Vector2.down, 2f);
+        if (facingRight == true) 
+        {
+            enemyTransform.x = 1;
+            transform.localScale = enemyTransform;
+        } 
+        else if (facingRight == false)
+       {
+            enemyTransform.x = -1;
+            transform.localScale = enemyTransform;
+        }
+        /*//Ground Detection + Movement
+        RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
         if (groundDetection.collider == false) {
-            if (facingRight == true) 
+            print("On ground");
+            /*if (facingRight == true) 
             {
                 enemyTransform.x = 1;
                 transform.localScale = enemyTransform;
@@ -40,7 +51,7 @@ public class EnemyAI : MonoBehaviour
                 enemyTransform.x = -1;
                 transform.localScale = enemyTransform;
             }
-        }  
+        } */
 
         if (CanSeePlayer(attackRange))
         {
@@ -117,6 +128,25 @@ public class EnemyAI : MonoBehaviour
     {
         isAggro = false;
         isSearching = false;
-        rigid2d.velocity = new Vector2(0, 0);
+        //rigid2d.velocity = new Vector2(0, 0); //instead of stopping it should patrol
+        patrol();
+    }
+
+    void patrol()
+    {
+        RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
+        if (groundDetection.collider == false) {
+            print("On ground");
+            if (facingRight == true) 
+            {
+                enemyTransform.x = 1;
+                transform.localScale = enemyTransform;
+            } 
+            else if (facingRight == false)
+            {
+                enemyTransform.x = -1;
+                transform.localScale = enemyTransform;
+            }
+        }  
     }
 }
