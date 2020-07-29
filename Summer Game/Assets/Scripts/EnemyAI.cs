@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool facingRight;
     public Transform castPoint;
+    public Transform groundDetector;
     private bool isAggro;
     private bool isSearching;
     
@@ -25,15 +26,21 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {  
         Vector3 enemyTransform = transform.localScale;
-        if (facingRight == true) 
-        {
-            enemyTransform.x = 1;
-            transform.localScale = enemyTransform;
-        } else if (facingRight == false)
-        {
-            enemyTransform.x = -1;
-            transform.localScale = enemyTransform;
-        }
+        
+        //Ground Detection + Movement
+        RaycastHit2D groundDetection = Physics2D.RaycastHit2D(groundDetector.position, Vector2.down, 2f);
+        if (groundDetection.collider == false) {
+            if (facingRight == true) 
+            {
+                enemyTransform.x = 1;
+                transform.localScale = enemyTransform;
+            } 
+            else if (facingRight == false)
+            {
+                enemyTransform.x = -1;
+                transform.localScale = enemyTransform;
+            }
+        }  
 
         if (CanSeePlayer(attackRange))
         {
@@ -111,8 +118,5 @@ public class EnemyAI : MonoBehaviour
         isAggro = false;
         isSearching = false;
         rigid2d.velocity = new Vector2(0, 0);
-
     }
-
-    
 }
