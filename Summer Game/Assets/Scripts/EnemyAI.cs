@@ -44,13 +44,18 @@ public class EnemyAI : MonoBehaviour
                 if (!isSearching)
                 {
                     isSearching = true;
-                    Invoke("stopChasingPlayer", 3); //see if more efficient way of delaying this
-
+                    Invoke("stopChasingPlayer",3);
+                    //delayNumberSeconds(3);
+                    //stopChasingPlayer();
                 }
             }
         }
     }
 
+    /*WaitForSeconds delayNumberSeconds(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+    }*/
     bool CanSeePlayer(float distance)
     {
         bool seesPlayer = false;
