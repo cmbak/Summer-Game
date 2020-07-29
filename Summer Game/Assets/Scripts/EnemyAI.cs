@@ -12,20 +12,29 @@ public class EnemyAI : MonoBehaviour
     public bool facingRight;
     public Transform castPoint;
     public Transform groundDetector;
-    private bool isAggro;
+    public bool isAggro;
     private bool isSearching;
     
-    
+    private Vector3 enemyTransform;
     // Start is called before the first frame update
     void Start()
     {
-
+        enemyTransform = transform.localScale;
+        facingRight = true;
     }
 
     // Update is called once per frame
     void Update()
     {  
-        Vector3 enemyTransform = transform.localScale;
+        if (isAggro)
+        {
+            chasePlayer();
+        } else {
+            patrol();
+        }
+        //Debug.Log("Frame");
+        
+        /*Vector3 enemyTransform = transform.localScale;
         
         if (facingRight == true) 
         {
@@ -36,7 +45,7 @@ public class EnemyAI : MonoBehaviour
        {
             enemyTransform.x = -1;
             transform.localScale = enemyTransform;
-        }
+        } */
         /*//Ground Detection + Movement
         RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
         if (groundDetection.collider == false) {
@@ -68,13 +77,13 @@ public class EnemyAI : MonoBehaviour
 
                 }
             }
+            /*else if (!isAggro && !isSearching){
+                patrol();
+            }*/
 
         }
 
-        if (isAggro)
-        {
-            chasePlayer();
-        }
+        
     }
 
     bool CanSeePlayer(float distance)
@@ -132,20 +141,46 @@ public class EnemyAI : MonoBehaviour
         patrol();
     }
 
+    void move()
+    {
+        if (facingRight == true) 
+        {
+            enemyTransform.x = 1;
+            transform.localScale = enemyTransform;
+            transform.Translate(actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
+        } 
+        else if (facingRight == false)
+        {
+            enemyTransform.x = -1;
+            transform.localScale = enemyTransform;
+            transform.Translate(-actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
+        }  
+        Debug.Log("moving");
+    }
+
     void patrol()
     {
+        Debug.Log("Patrol method executed");
         RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
-        if (groundDetection.collider == false) {
-            print("On ground");
-            if (facingRight == true) 
+        Debug.DrawRay(groundDetector.position, Vector2.down * 5f, Color.blue);
+        if (groundDetection.collider != null) {
+            Debug.Log("on Ground");
+            Debug.DrawRay(groundDetector.position, Vector2.down * 5f, Color.green);
+            move();
+        }
+        else if (groundDetection.collider == null)
+        {
+            Debug.Log("Near Edge of ground");
+            Debug.DrawRay(groundDetector.position, Vector2.down * 5f, Color.red);
+            if (facingRight)
             {
-                enemyTransform.x = 1;
-                transform.localScale = enemyTransform;
-            } 
-            else if (facingRight == false)
+                facingRight = false;
+                move();
+            }    
+            else if (!facingRight)
             {
-                enemyTransform.x = -1;
-                transform.localScale = enemyTransform;
+                facingRight = true;
+                move();
             }
         }  
     }
