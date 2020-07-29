@@ -1414,7 +1414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281833858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.34, y: -1.665, z: 0}
+  m_LocalPosition: {x: -9.39, y: -1.665, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1322630853}
@@ -2284,6 +2284,8 @@ MonoBehaviour:
   attackRange: 5
   facingRight: 1
   castPoint: {fileID: 1362813241}
+  groundDetector: {fileID: 1426529697}
+  isAggro: 0
 --- !u!61 &2090153417
 BoxCollider2D:
   m_ObjectHideFlags: 0

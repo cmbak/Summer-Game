@@ -32,35 +32,6 @@ public class EnemyAI : MonoBehaviour
         } else {
             patrol();
         }
-        //Debug.Log("Frame");
-        
-        /*Vector3 enemyTransform = transform.localScale;
-        
-        if (facingRight == true) 
-        {
-            enemyTransform.x = 1;
-            transform.localScale = enemyTransform;
-        } 
-        else if (facingRight == false)
-       {
-            enemyTransform.x = -1;
-            transform.localScale = enemyTransform;
-        } */
-        /*//Ground Detection + Movement
-        RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
-        if (groundDetection.collider == false) {
-            print("On ground");
-            /*if (facingRight == true) 
-            {
-                enemyTransform.x = 1;
-                transform.localScale = enemyTransform;
-            } 
-            else if (facingRight == false)
-            {
-                enemyTransform.x = -1;
-                transform.localScale = enemyTransform;
-            }
-        } */
 
         if (CanSeePlayer(attackRange))
         {
@@ -77,13 +48,7 @@ public class EnemyAI : MonoBehaviour
 
                 }
             }
-            /*else if (!isAggro && !isSearching){
-                patrol();
-            }*/
-
         }
-
-        
     }
 
     bool CanSeePlayer(float distance)
@@ -110,12 +75,7 @@ public class EnemyAI : MonoBehaviour
             {
                 seesPlayer = false;
             }
-            //Debug.DrawLine(castPoint.position, hit.point, Color.green, 10.0f);
         }
-        /*else
-        {
-            Debug.DrawLine(castPoint.position, endPos, Color.blue, 10.0f);
-        }*/
         return seesPlayer;
     }
      
@@ -123,11 +83,13 @@ public class EnemyAI : MonoBehaviour
     {
         if (transform.position.x > Player.transform.position.x) //Enemy is to the right of the player
         {
+            enemyTransform.x = -1;
             transform.Translate(-actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
             facingRight = false;
         }
         else if (transform.position.x < Player.transform.position.x) //Enemy is to the left of the player
         {
+            enemyTransform.x = 1;
             transform.Translate(actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
             facingRight = true;
         }
@@ -137,41 +99,33 @@ public class EnemyAI : MonoBehaviour
     {
         isAggro = false;
         isSearching = false;
-        //rigid2d.velocity = new Vector2(0, 0); //instead of stopping it should patrol
         patrol();
     }
 
     void move()
     {
-        if (facingRight == true) 
+        if (facingRight) 
         {
             enemyTransform.x = 1;
             transform.localScale = enemyTransform;
             transform.Translate(actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
         } 
-        else if (facingRight == false)
+        else if (!facingRight)
         {
             enemyTransform.x = -1;
             transform.localScale = enemyTransform;
             transform.Translate(-actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
         }  
-        Debug.Log("moving");
     }
 
     void patrol()
     {
-        Debug.Log("Patrol method executed");
         RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
-        Debug.DrawRay(groundDetector.position, Vector2.down * 5f, Color.blue);
         if (groundDetection.collider != null) {
-            Debug.Log("on Ground");
-            Debug.DrawRay(groundDetector.position, Vector2.down * 5f, Color.green);
             move();
         }
         else if (groundDetection.collider == null)
         {
-            Debug.Log("Near Edge of ground");
-            Debug.DrawRay(groundDetector.position, Vector2.down * 5f, Color.red);
             if (facingRight)
             {
                 facingRight = false;
