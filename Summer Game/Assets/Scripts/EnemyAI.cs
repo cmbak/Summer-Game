@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     public bool facingRight;
     public Transform castPoint;
     public Transform groundDetector;
-    public bool isAggro;
+    private bool isAggro;
     private bool isSearching;
     
     private Vector3 enemyTransform;
@@ -102,15 +102,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    IEnumerator waitStopChasing()
-    {
-        Debug.Log("Now started waiter coroutine");
-
-        yield return new WaitForSeconds(3);
-        isAggro = false;
-        isSearching = false;
-        patrol();
-    }
     void stopChasingPlayer()
     {
         isAggro = false;
@@ -138,6 +129,7 @@ public class EnemyAI : MonoBehaviour
     {
         isAggro = false;
         isSearching = false;
+
         RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
         if (groundDetection.collider != null) {
             move();
