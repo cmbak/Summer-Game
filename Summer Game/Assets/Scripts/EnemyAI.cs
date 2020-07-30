@@ -26,16 +26,11 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if (isAggro)
-        {
-            chasePlayer();
-        } else {
-            patrol();
-        }
-
+        
         if (CanSeePlayer(attackRange))
         {
             isAggro = true;
+            //chasePlayer();
         }
         else
         {
@@ -50,12 +45,16 @@ public class EnemyAI : MonoBehaviour
                 }
             }
         }
+
+        if(isAggro)
+        {
+            chasePlayer();
+        }
+        else{
+            patrol();
+        }
     }
 
-    /*WaitForSeconds delayNumberSeconds(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-    }*/
     bool CanSeePlayer(float distance)
     {
         bool seesPlayer = false;
@@ -86,20 +85,32 @@ public class EnemyAI : MonoBehaviour
      
     void chasePlayer()
     {
-        if (transform.position.x > Player.transform.position.x) //Enemy is to the right of the player
+        if (transform.position.x > Player.transform.position.x) //Player is on the left of enemy therefore turn left
         {
-            enemyTransform.x = -1;
-            transform.Translate(-actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
             facingRight = false;
+            enemyTransform.x = -1;
+            transform.localScale = enemyTransform;
+            transform.Translate(-actualSpeed * Time.deltaTime * moveSpeed, 0, 0);   
         }
-        else if (transform.position.x < Player.transform.position.x) //Enemy is to the left of the player
+        else if (transform.position.x < Player.transform.position.x) //Player is on the right of enemy therefore turn right
         {
-            enemyTransform.x = 1;
-            transform.Translate(actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
             facingRight = true;
+            enemyTransform.x = 1;
+            transform.localScale = enemyTransform;
+            transform.Translate(actualSpeed * Time.deltaTime * moveSpeed, 0, 0);
+            
         }
     }
 
+    IEnumerator waitStopChasing()
+    {
+        Debug.Log("Now started waiter coroutine");
+
+        yield return new WaitForSeconds(3);
+        isAggro = false;
+        isSearching = false;
+        patrol();
+    }
     void stopChasingPlayer()
     {
         isAggro = false;
@@ -125,6 +136,8 @@ public class EnemyAI : MonoBehaviour
 
     void patrol()
     {
+        isAggro = false;
+        isSearching = false;
         RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
         if (groundDetection.collider != null) {
             move();
