@@ -8,11 +8,13 @@ public class EnemyAI : MonoBehaviour
     public Rigidbody2D rigid2d; //CS0649 error comes up if using private - research and see if change is necessary
     public float moveSpeed;
     public float actualSpeed;
+
+    public float jumpForce;
     public float attackRange;
     public bool facingRight;
     public Transform castPoint;
     public Transform groundDetector;
-    private bool isAggro;
+    public bool isAggro;
     private bool isSearching;
     
     private Vector3 enemyTransform;
@@ -21,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     {
         enemyTransform = transform.localScale;
         facingRight = true;
+        //attackJump();
     }
 
     // Update is called once per frame
@@ -29,8 +32,7 @@ public class EnemyAI : MonoBehaviour
         
         if (CanSeePlayer(attackRange))
         {
-            isAggro = true;
-            //chasePlayer();
+            isAggro = true;        
         }
         else
         {
@@ -40,8 +42,6 @@ public class EnemyAI : MonoBehaviour
                 {
                     isSearching = true;
                     Invoke("stopChasingPlayer",3);
-                    //delayNumberSeconds(3);
-                    //stopChasingPlayer();
                 }
             }
         }
@@ -85,6 +85,10 @@ public class EnemyAI : MonoBehaviour
      
     void chasePlayer()
     {
+        if(Vector2.Distance(transform.position, Player.transform.position) < 2)
+        {
+            attackJump();
+        }
         if (transform.position.x > Player.transform.position.x) //Player is on the left of enemy therefore turn left
         {
             facingRight = false;
@@ -147,5 +151,11 @@ public class EnemyAI : MonoBehaviour
                 move();
             }
         }  
+    }
+
+    void attackJump()
+    {
+        //rigid2d.AddForce(new Vector2 (0f, jumpForce), ForceMode2D.Impulse);
+        rigid2d.velocity = Vector2.up * jumpForce;
     }
 }

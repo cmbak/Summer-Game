@@ -2213,7 +2213,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &2090153415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2281,6 +2281,7 @@ MonoBehaviour:
   rigid2d: {fileID: 2090153414}
   moveSpeed: 1
   actualSpeed: 2
+  jumpForce: 6
   attackRange: 5
   facingRight: 1
   castPoint: {fileID: 1362813241}
