@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public GameObject Player;
-    public Rigidbody2D rigid2d; //CS0649 error comes up if using private - research and see if change is necessary
+    public Rigidbody2D rigid2d;
     public float moveSpeed;
     public float actualSpeed;
 
@@ -23,7 +23,6 @@ public class EnemyAI : MonoBehaviour
     {
         enemyTransform = transform.localScale;
         facingRight = true;
-        //attackJump();
     }
 
     // Update is called once per frame
@@ -158,4 +157,4 @@ public class EnemyAI : MonoBehaviour
         //rigid2d.AddForce(new Vector2 (0f, jumpForce), ForceMode2D.Impulse);
         rigid2d.velocity = Vector2.up * jumpForce;
     }
-}
+}   
