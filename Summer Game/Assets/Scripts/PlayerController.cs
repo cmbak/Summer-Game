@@ -70,14 +70,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = respawnPoint;
             Lives --;
-            //alterLives(false);
             Debug.Log("Respawn");
         }
 
     }
     
-    //void alterLives(bool alter)
-   // {
-    //    if (alter)
-    //}
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.collider.tag == "Blobby") //Could change to layer mask with name of enemy in future - for different types of enemies
+        {
+            HP -= 10;
+        }
+    }
 }
