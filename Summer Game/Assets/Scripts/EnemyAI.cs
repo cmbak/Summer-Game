@@ -8,10 +8,10 @@ public class EnemyAI : MonoBehaviour
     public Rigidbody2D rigid2d;
     public float moveSpeed;
     public float actualSpeed;
-
     public float jumpForce;
     public float attackRange;
     public bool facingRight;
+    public float groundDistance;
     public Transform castPoint;
     public Transform groundDetector;
     public bool isAggro;
@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        
+        isGrounded();
         if (CanSeePlayer(attackRange))
         {
             isAggro = true;        
@@ -156,5 +156,24 @@ public class EnemyAI : MonoBehaviour
     {
         //rigid2d.AddForce(new Vector2 (0f, jumpForce), ForceMode2D.Impulse);
         rigid2d.velocity = Vector2.up * jumpForce;
+    }
+
+    bool isGrounded()
+    {   
+        bool grounded;
+        int groundLayerMask = LayerMask.GetMask("Ground");
+        RaycastHit2D groundRayCast = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayerMask);//create raycast
+        
+        if (groundRayCast.collider != null) //Hit something on ground layermask
+        {
+            grounded = true;
+            Debug.Log("Grounded");
+        }
+        else 
+        {
+            grounded = false;
+            Debug.Log("Not grounded");
+        }
+        return grounded;
     }
 }   
