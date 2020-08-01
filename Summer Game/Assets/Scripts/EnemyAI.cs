@@ -55,6 +55,12 @@ public class EnemyAI : MonoBehaviour
         else{
             patrol();
         }
+
+        if (health == 0)
+        {
+            Debug.Log("Blobby Died!");
+            Destroy(gameObject);
+        }
     }
 
     bool CanSeePlayer(float distance)
