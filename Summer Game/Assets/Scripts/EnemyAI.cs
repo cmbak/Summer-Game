@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     private bool isSearching;
     public Animator animator;
     private Vector3 enemyTransform;
+    public int health;
     
     // Start is called before the first frame update
     void Start()
