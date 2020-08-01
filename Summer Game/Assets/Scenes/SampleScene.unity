@@ -296,8 +296,8 @@ MonoBehaviour:
   smoothTimeX: 0.05
   smoothTimeY: 0.05
   wantBounds: 1
-  minCameraPos: {x: -100, y: -2.22, z: -10}
-  maxCameraPos: {x: 100, y: -0.14, z: -10}
+  minCameraPos: {x: -100, y: -3, z: -10}
+  maxCameraPos: {x: 100, y: 3, z: -10}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1441,6 +1441,8 @@ MonoBehaviour:
   isGrounded: 0
   animator: {fileID: 1281833864}
   respawnPoint: {x: -8.18, y: -1.665, z: 0}
+  Lives: 0
+  HP: 0
 --- !u!50 &1281833862
 Rigidbody2D:
   serializedVersion: 4

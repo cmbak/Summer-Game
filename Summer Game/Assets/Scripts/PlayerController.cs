@@ -65,12 +65,19 @@ public class PlayerController : MonoBehaviour
     }
 
     //Respawn
-    private void OnTriggerEnter2D(Collider2D collider) {
+    private void OnTriggerExit2D(Collider2D collider) {
         if (collider.tag == "Respawn")
         {
             transform.position = respawnPoint;
             Lives --;
+            //alterLives(false);
             Debug.Log("Respawn");
         }
+
     }
+    
+    //void alterLives(bool alter)
+   // {
+    //    if (alter)
+    //}
 }
