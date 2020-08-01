@@ -68,18 +68,18 @@ public class PlayerController : MonoBehaviour
     }
 
     //Respawn
-    private void OnTriggerExit2D(Collider2D collider) {
+    private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Respawn")  //change to switch statements if necessary
         {
             transform.position = respawnPoint;
             Lives --;
             Debug.Log("Respawn");
         }
-        /*else if (collider.tag == "Coin")
+        else if (collider.tag == "Coin")
         {
             Coins ++;
             Destroy(collider.gameObject);
-        }*/
+        }
 
     }
     
