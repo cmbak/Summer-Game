@@ -12,14 +12,21 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = false;
     private Rigidbody2D rb;
     public Animator animator;
+    public Vector3 respawnPoint;
+    public int Lives;
+    public int HP;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        respawnPoint = transform.position;
+
         isGrounded = true; 
         canDoubleJump = true;
         amountOfDoubleJumps = 1;
+        Lives = 3;
+        HP = 100;
     }
 
     // Update is called once per frame
@@ -54,6 +61,15 @@ public class PlayerController : MonoBehaviour
             amountOfDoubleJumps --;
             canDoubleJump = false;
             
+        }
+    }
+
+    //Respawn
+    private void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.tag == "Respawn")
+        {
+            transform.position = respawnPoint;
+            Debug.Log("Respawn");
         }
     }
 }

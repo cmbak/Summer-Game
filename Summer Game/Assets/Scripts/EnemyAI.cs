@@ -136,10 +136,10 @@ public class EnemyAI : MonoBehaviour
         isSearching = false;
 
         RaycastHit2D edgeDetection = Physics2D.Raycast(edgeDetector.position, Vector2.down, 5f);
-        if (edgeDetection.collider != null) {
+        if (edgeDetection.collider != null && edgeDetection.collider.tag == "Ground") {
             move();
         }
-        else if (edgeDetection.collider == null)
+        else if (edgeDetection.collider == null || edgeDetection.collider.tag == "Respawn")
         {
             if (facingRight)
             {
