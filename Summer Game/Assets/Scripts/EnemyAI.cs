@@ -6,19 +6,20 @@ public class EnemyAI : MonoBehaviour
 {
     public GameObject Player;
     public Rigidbody2D rigid2d;
+    public Transform castPoint;
+    public Transform edgeDetector;
+    public Transform groundDetector;
     public float moveSpeed;
     public float actualSpeed;
     public float jumpForce;
     public float attackRange;
     public bool facingRight;
     public float groundDistance;
-    public Transform castPoint;
-    public Transform edgeDetector;
-    public Transform groundDetector;
     public bool isAggro;
     private bool isSearching;
-    
+    public Animator animator;
     private Vector3 enemyTransform;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         isGrounded();
         if (CanSeePlayer(attackRange))
         {
-            isAggro = true;        
+            isAggro = true;
         }
         else
         {
@@ -168,12 +169,12 @@ public class EnemyAI : MonoBehaviour
         if (groundRayCast.collider != null) //Hit something on ground layermask
         {
             grounded = true;
-            Debug.Log("Grounded");
+            animator.SetBool("isJumping", false);
         }
         else 
         {
             grounded = false;
-            Debug.Log("Not grounded");
+            animator.SetBool("isJumping", true);
         }
         return grounded;
     }
