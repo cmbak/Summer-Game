@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPoint;
     public int Lives;
     public int HP;
+    public int Coins;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +26,10 @@ public class PlayerController : MonoBehaviour
         isGrounded = true; 
         canDoubleJump = true;
         amountOfDoubleJumps = 1;
+        
         Lives = 3;
         HP = 100;
+        Coins = 0;
     }
 
     // Update is called once per frame
@@ -66,12 +69,17 @@ public class PlayerController : MonoBehaviour
 
     //Respawn
     private void OnTriggerExit2D(Collider2D collider) {
-        if (collider.tag == "Respawn")
+        if (collider.tag == "Respawn")  //change to switch statements if necessary
         {
             transform.position = respawnPoint;
             Lives --;
             Debug.Log("Respawn");
         }
+        /*else if (collider.tag == "Coin")
+        {
+            Coins ++;
+            Destroy(collider.gameObject);
+        }*/
 
     }
     
