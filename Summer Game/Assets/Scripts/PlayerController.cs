@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
         if (collider.tag == "Respawn")
         {
             transform.position = respawnPoint;
+            Lives --;
             Debug.Log("Respawn");
         }
     }
