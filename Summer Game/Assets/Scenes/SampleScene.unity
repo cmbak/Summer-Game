@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 1173253274}
   - component: {fileID: 1173253273}
   - component: {fileID: 1173253275}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grass Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1603,7 +1603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2090153412}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426529696
 GameObject:
@@ -1615,7 +1615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426529697}
   m_Layer: 0
-  m_Name: GroundDetection
+  m_Name: EdgeDetection
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1633,7 +1633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2090153412}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539784281
 GameObject:
@@ -1839,6 +1839,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1876153024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876153025}
+  m_Layer: 0
+  m_Name: GroundDetect
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1876153025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876153024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029, y: -0.169, z: -10.814008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2090153412}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889957893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2202,7 @@ Transform:
   m_LocalPosition: {x: -4.27, y: -1.228, z: 4.5043945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1876153025}
   - {fileID: 1362813241}
   - {fileID: 1426529697}
   m_Father: {fileID: 26764509}
@@ -2284,8 +2315,10 @@ MonoBehaviour:
   jumpForce: 6
   attackRange: 5
   facingRight: 1
+  groundDistance: 0.5
   castPoint: {fileID: 1362813241}
-  groundDetector: {fileID: 1426529697}
+  edgeDetector: {fileID: 1426529697}
+  groundDetector: {fileID: 1876153025}
   isAggro: 0
 --- !u!61 &2090153417
 BoxCollider2D:

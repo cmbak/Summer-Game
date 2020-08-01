@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     public bool facingRight;
     public float groundDistance;
     public Transform castPoint;
+    public Transform edgeDetector;
     public Transform groundDetector;
     public bool isAggro;
     private bool isSearching;
@@ -133,11 +134,11 @@ public class EnemyAI : MonoBehaviour
         isAggro = false;
         isSearching = false;
 
-        RaycastHit2D groundDetection = Physics2D.Raycast(groundDetector.position, Vector2.down, 5f);
-        if (groundDetection.collider != null) {
+        RaycastHit2D edgeDetection = Physics2D.Raycast(edgeDetector.position, Vector2.down, 5f);
+        if (edgeDetection.collider != null) {
             move();
         }
-        else if (groundDetection.collider == null)
+        else if (edgeDetection.collider == null)
         {
             if (facingRight)
             {
@@ -162,7 +163,7 @@ public class EnemyAI : MonoBehaviour
     {   
         bool grounded;
         int groundLayerMask = LayerMask.GetMask("Ground");
-        RaycastHit2D groundRayCast = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayerMask);//create raycast
+        RaycastHit2D groundRayCast = Physics2D.Raycast(groundDetector.position, Vector2.down, groundDistance, groundLayerMask);//create raycast
         
         if (groundRayCast.collider != null) //Hit something on ground layermask
         {
