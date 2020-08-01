@@ -35,4 +35,14 @@ public class Grounded : MonoBehaviour
             playerScript.isGrounded = false;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collider) {
+        if (collider.tag == "Respawn")
+        {
+            playerScript.Lives ++;
+            //alterLives(false);
+            //Debug.Log("Respawn");
+        }
+
+    }
 }
