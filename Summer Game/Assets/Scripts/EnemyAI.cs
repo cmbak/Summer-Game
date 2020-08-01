@@ -85,7 +85,7 @@ public class EnemyAI : MonoBehaviour
      
     void chasePlayer()
     {
-        if(Vector2.Distance(transform.position, Player.transform.position) < 2)
+        if((Vector2.Distance(transform.position, Player.transform.position) < 2) && isGrounded())
         {
             attackJump();
         }
