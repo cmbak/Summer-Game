@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Coin
   - Blobby
+  - Platform
   layers:
   - Default
   - TransparentFX
