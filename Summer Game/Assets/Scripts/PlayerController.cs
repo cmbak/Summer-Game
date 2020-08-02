@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPoint;
     public int Lives;
     public int HP;
+    public int maxHP = 100;
     public int Coins;
+
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,8 @@ public class PlayerController : MonoBehaviour
         amountOfDoubleJumps = 1;
         
         Lives = 3;
-        HP = 100;
+        HP = maxHP;
+        healthBar.SetMaxHealth(maxHP);
         Coins = 0;
     }
 
@@ -86,7 +90,13 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Blobby") //Could change to layer mask with name of enemy in future - for different types of enemies
         {
-            HP -= 10;
+            TakeDamage(-10);
         }
+    }
+
+    private void TakeDamage(int damage)
+    {
+        HP -= damage;
+        healthBar.SetHealth(HP);
     }
 }

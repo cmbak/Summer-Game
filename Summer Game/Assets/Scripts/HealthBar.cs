@@ -8,4 +8,14 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
     
+    public void SetMaxHealth(int health) //Used to set Max at start of game
+    {
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    public void SetHealth(int health)
+    {
+        slider.value = health;
+    }
 }
