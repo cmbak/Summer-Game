@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = respawnPoint;
             Lives --;
+            HP = maxHP;
+            healthBar.SetHealth(maxHP);
             Debug.Log("Respawn");
         }
         else if (collider.tag == "Coin")
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Blobby") //Could change to layer mask with name of enemy in future - for different types of enemies
         {
-            TakeDamage(-10);
+            TakeDamage(10);
         }
     }
 
