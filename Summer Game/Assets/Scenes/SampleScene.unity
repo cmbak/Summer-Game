@@ -170,7 +170,7 @@ MonoBehaviour:
   smoothTimeY: 0.05
   wantBounds: 1
   minCameraPos: {x: -100, y: -4, z: -10}
-  maxCameraPos: {x: 100, y: 4, z: -10}
+  maxCameraPos: {x: 100, y: 10, z: -10}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2033,16 +2033,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 352612052997553723, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -505245861
-      objectReference: {fileID: 0}
-    - target: {fileID: 352612052997553723, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1717834459760573896, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2098,50 +2088,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1930236960232986216, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_TagString
-      value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777230604906194906, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -505245861
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777230604906194906, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2805527154806847455, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
         type: 3}
       propertyPath: m_Name
       value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805527154806847455, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108812880067524067, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_TagString
-      value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 7206135194085426874, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_TagString
-      value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776824857146321154, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -505245861
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776824857146321154, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef94a6a2a1abbde4eb6077ea544bb3be, type: 3}
