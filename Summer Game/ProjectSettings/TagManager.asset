@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Blobby
   - Platform
+  - PlayerGroundDetector
   layers:
   - Default
   - TransparentFX

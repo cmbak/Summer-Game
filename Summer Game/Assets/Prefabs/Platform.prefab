@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8797673163179779390}
   - component: {fileID: 7776824857146321154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform_Edge_Right
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 1717834459760573896}
   - component: {fileID: 1283777745220041075}
   - component: {fileID: 3074379666075774044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9018804935657411422}
   - component: {fileID: 2777230604906194906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform_Edge_Left
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 989309224077325605}
   - component: {fileID: 352612052997553723}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform_Middle
   m_TagString: Platform
   m_Icon: {fileID: 0}

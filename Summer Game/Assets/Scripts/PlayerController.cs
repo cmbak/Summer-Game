@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     public int HP;
     public int maxHP = 100;
     public int Coins;
-
     public HealthBar healthBar;
 
     // Start is called before the first frame update
@@ -40,6 +39,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (amountOfDoubleJumps > 3){amountOfDoubleJumps = 3;}
+        
+        
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += horizontal * Time.deltaTime * speed;
 
@@ -83,11 +84,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Respawn");
         }
         else if (collider.tag == "Coin")
-        {
+        {   
             Coins ++;
+            Debug.Log("Player collided with coin");
+            Debug.Log("Collision: " + gameObject.name);
             Destroy(collider.gameObject);
         }
-
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -95,6 +97,12 @@ public class PlayerController : MonoBehaviour
         {
             TakeDamage(10);
         }
+
+        if (collision.collider.tag == "PlayerGroundDetector")
+        {
+            Debug.Log("Collided with child");
+        }
+        
     }
 
     private void TakeDamage(int damage)
@@ -102,4 +110,9 @@ public class PlayerController : MonoBehaviour
         HP -= damage;
         healthBar.SetHealth(HP);
     }
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag =)
+    }*/
 }

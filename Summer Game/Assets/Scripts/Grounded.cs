@@ -30,7 +30,7 @@ public class Grounded : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Ground" || collision.collider.tag == "Platform")
         {
             playerScript.isGrounded = false;
         }
@@ -42,6 +42,23 @@ public class Grounded : MonoBehaviour
             playerScript.Lives ++;
 
         }
-
     }
+
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Coin")
+        {
+            //Debug.Log("Plyaer gound thing coollider iwth coin");
+            //playerScript.Coins--;
+        }
+    }
+    /*private void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.tag != "PlayerGroundDetector")
+        {
+            if (collider.tag == "Coin")
+            {
+                playerScript.Coins --;
+            }
+        } 
+    }*/
 }

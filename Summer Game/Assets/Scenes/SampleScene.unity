@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 1322630855}
   m_Layer: 8
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: PlayerGroundDetector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2953,10 +2953,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930236960232986216, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2805527154806847455, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
         type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805527154806847455, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805527154806847455, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108812880067524067, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206135194085426874, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef94a6a2a1abbde4eb6077ea544bb3be, type: 3}
