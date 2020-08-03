@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool canDoubleJump;
     public float speed;
     public float jumpForce;
-    public bool isGrounded = false;
+    //public bool isGrounded = false;
     private Rigidbody2D rb;
     public Animator animator;
     public Vector3 respawnPoint;
@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
 
-        isGrounded = true; 
+        //isGrounded = true; 
+        isGroundedMethod();
         canDoubleJump = true;
         amountOfDoubleJumps = 1;
         
@@ -56,12 +57,12 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = characterScale;
 
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if (Input.GetButtonDown("Jump") && isGroundedMethod() == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
         } 
-        else if (Input.GetButtonDown("Jump") && isGrounded == false && canDoubleJump == true && amountOfDoubleJumps > 0)
+        else if (Input.GetButtonDown("Jump") && isGroundedMethod() == false && canDoubleJump == true && amountOfDoubleJumps > 0)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
@@ -100,5 +101,18 @@ public class PlayerController : MonoBehaviour
     {
         HP -= damage;
         healthBar.SetHealth(HP);
+    }
+
+    private bool isGroundedMethod()
+    { 
+        float distance = 1f;
+        int groundLayer = LayerMask.GetMask("Ground");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, groundLayer); 
+
+        if(hit.collider != null)
+        {
+            return true;
+        }
+        return false;
     }
 }

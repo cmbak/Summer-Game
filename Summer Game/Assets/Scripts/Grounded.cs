@@ -22,7 +22,7 @@ public class Grounded : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Ground")
         {
-            playerScript.isGrounded = true;
+            //playerScript.isGrounded = true;
             playerScript.canDoubleJump = true;
             playerScript.amountOfDoubleJumps ++;
             playerScript.animator.SetBool("isJumping", false);
@@ -32,7 +32,7 @@ public class Grounded : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.collider.tag == "Ground")
         {
-            playerScript.isGrounded = false;
+            //playerScript.isGrounded = false;
         }
     }
 
@@ -40,9 +40,10 @@ public class Grounded : MonoBehaviour
         if (collider.tag == "Respawn")
         {
             playerScript.Lives ++;
-            //alterLives(false);
-            //Debug.Log("Respawn");
         }
-
+        /*else if (collider.tag == "Coin")
+        {
+            playerScript.Coins --;
+        }*/
     }
 }

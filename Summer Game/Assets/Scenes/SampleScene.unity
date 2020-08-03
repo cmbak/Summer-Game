@@ -529,36 +529,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &786569362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 786569363}
-  m_Layer: 0
-  m_Name: Coins
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &786569363
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786569362}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -259.31073, y: 161.74686, z: -50.606186}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1534905690}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &841445204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -645,6 +615,7 @@ GameObject:
   - component: {fileID: 998329573}
   - component: {fileID: 998329575}
   - component: {fileID: 998329574}
+  - component: {fileID: 998329576}
   m_Layer: 5
   m_Name: CointAmountText
   m_TagString: Untagged
@@ -669,7 +640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -368.5, y: 112.4}
+  m_AnchoredPosition: {x: 554, y: 169.70999}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998329574
@@ -792,6 +763,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998329572}
   m_CullTransparentMesh: 0
+--- !u!114 &998329576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998329572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da4db889f1216b40af3f0d67d9fd9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 998329574}
 --- !u!1 &1173253271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1654,7 @@ Transform:
   m_Children:
   - {fileID: 1322630853}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1281833861
 MonoBehaviour:
@@ -1796,12 +1780,12 @@ RectTransform:
   - {fileID: 264287637}
   - {fileID: 2143018598}
   m_Father: {fileID: 1534905690}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397.36, y: 157.6}
-  m_SizeDelta: {x: 227.2832, y: 23.780052}
+  m_AnchoredPosition: {x: -419.1, y: 161.3}
+  m_SizeDelta: {x: 152.89215, y: 15.996712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294641377
 MonoBehaviour:
@@ -1995,7 +1979,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1465799499
 BoxCollider2D:
@@ -2053,7 +2037,7 @@ Transform:
   - {fileID: 457504335}
   - {fileID: 938346235}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534905686
 GameObject:
@@ -2146,7 +2130,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 998329573}
-  - {fileID: 786569363}
   - {fileID: 1294641376}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2706,8 +2689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 64.77, y: 19.19}
-  m_SizeDelta: {x: 129.54248, y: 38.382965}
+  m_AnchoredPosition: {x: 49.28, y: 17.01}
+  m_SizeDelta: {x: 98.56444, y: 29.204285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143018599
 MonoBehaviour:
@@ -2953,7 +2936,7 @@ PrefabInstance:
     - target: {fileID: 1717834459760573896, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717834459760573896, guid: ef94a6a2a1abbde4eb6077ea544bb3be,
         type: 3}
