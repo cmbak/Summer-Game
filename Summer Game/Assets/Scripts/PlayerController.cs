@@ -84,11 +84,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Respawn");
         }
         else if (collider.tag == "Coin")
-        {   
-            Coins ++;
-            Debug.Log("Player collided with coin");
-            Debug.Log("Collision: " + gameObject.name);
-            Destroy(collider.gameObject);
+        {
+            Debug.Log("Player touches coin");
         }
     }
     
