@@ -189,6 +189,7 @@ public class EnemyAI : MonoBehaviour
         {
             grounded = true;
             animator.SetBool("isJumping", false);
+            
         }
         else 
         {
