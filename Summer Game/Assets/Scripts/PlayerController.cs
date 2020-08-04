@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private int amountOfDoubleJumps;
     private int extraJumps;
     private Rigidbody2D rb;
+    public ParticleSystem dust;
     public HealthBar healthBar;
     public Animator animator;
     public Vector3 respawnPoint;
@@ -55,10 +56,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxis("Horizontal") > 0) //Moving right
         {
             characterScale.x = 1;
+            //CreateDust();
         }
         else if (Input.GetAxis("Horizontal") < 0) //Moving left
         {
             characterScale.x = -1;
+            //CreateDust();
         }
         transform.localScale = characterScale;
 
@@ -66,6 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
+            CreateDust();
         }
         else if (Input.GetButtonDown("Jump") && !isGrounded() && canDoubleJump && amountOfDoubleJumps > 0)
         {
@@ -122,5 +126,10 @@ public class PlayerController : MonoBehaviour
             playerGrounded = false;
             return false;
         }
+    }
+
+    private void CreateDust()
+    {
+        dust.Play();
     }
 }
