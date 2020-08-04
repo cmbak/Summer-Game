@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     public int HP;
     public int maxHP = 100;
     public int Coins;
-    [SerializeField]
-    private int amountOfDoubleJumps;
+    [SerializeField] private int amountOfDoubleJumps;
     private int extraJumps;
     private Rigidbody2D rb;
     public ParticleSystem dust;
@@ -18,14 +17,10 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Vector3 respawnPoint;
     [Header("Debugging")]
-    [SerializeField]
-    private bool canDoubleJump;
-    [SerializeField]
-    private bool playerGrounded; //Used for debugging, can be deleted later
-    [SerializeField]
-    private float jumpForce = 6;
-    [SerializeField]
-    private float speed = 5;
+    [SerializeField] private bool canDoubleJump;
+    [SerializeField] private bool playerGrounded; //Used for debugging, can be deleted later
+    [SerializeField] private float jumpForce = 6;
+    [SerializeField] private float speed = 5;
  
     // Start is called before the first frame update
     void Start()

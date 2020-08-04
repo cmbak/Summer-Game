@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8255673218605303744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerCast
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8255673218670607192}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EdgeDetection
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 8255673219080721212}
   - component: {fileID: 8255673219080721200}
   - component: {fileID: 8255673219080721203}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blobby
   m_TagString: Blobby
   m_Icon: {fileID: 0}
@@ -162,10 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a71787520b948a46a10f59ae89486a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  castPoint: {fileID: 8255673218605303744}
-  edgeDetector: {fileID: 8255673218670607192}
-  groundDetector: {fileID: 8255673219370316856}
+  health: 30
   moveSpeed: 1
   actualSpeed: 2
   jumpForce: 4
@@ -174,7 +171,10 @@ MonoBehaviour:
   groundDistance: 0.5
   isAggro: 0
   animator: {fileID: 8255673219080721203}
-  health: 30
+  Player: {fileID: 0}
+  castPoint: {fileID: 8255673218605303744}
+  edgeDetector: {fileID: 8255673218670607192}
+  groundDetector: {fileID: 8255673219370316856}
 --- !u!50 &8255673219080721215
 Rigidbody2D:
   serializedVersion: 4
@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8255673219370316856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundDetect
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}

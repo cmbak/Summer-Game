@@ -8,17 +8,12 @@ public class EnemyAI : MonoBehaviour
     public int health;
     [Header("Debugging")]
     public float moveSpeed;
-    [SerializeField]
-    private float actualSpeed = 2;
-    [SerializeField]
-    private float jumpForce = 4;
-    [SerializeField]
-    private float attackRange = 5;
-    [SerializeField]
-    private bool facingRight = true;
+    [SerializeField] private float actualSpeed = 2;
+    [SerializeField] private float jumpForce = 4;
+    [SerializeField] private float attackRange = 5;
+    [SerializeField] private bool facingRight = true;
     public float groundDistance;
-    [SerializeField]
-    private bool isAggro = false;
+    [SerializeField] private bool isAggro = false;
     private bool isSearching;
     public Animator animator;
     private Vector3 enemyTransform;

@@ -7583,16 +7583,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8255673218605303745, guid: c7ce7ad64b67bb34c9f324905a496fd2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255673218670607193, guid: c7ce7ad64b67bb34c9f324905a496fd2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8255673219080721201, guid: c7ce7ad64b67bb34c9f324905a496fd2,
         type: 3}
       propertyPath: Player
@@ -7602,11 +7592,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blobby
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255673219080721210, guid: c7ce7ad64b67bb34c9f324905a496fd2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8255673219080721213, guid: c7ce7ad64b67bb34c9f324905a496fd2,
         type: 3}
@@ -7662,11 +7647,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255673219370316857, guid: c7ce7ad64b67bb34c9f324905a496fd2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ce7ad64b67bb34c9f324905a496fd2, type: 3}
