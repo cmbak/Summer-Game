@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public int maxHP = 100;
     public int Coins;
     public HealthBar healthBar;
-    private int i = 0;
+    private int i = 0; //Used to verify coin triggering
 
     // Start is called before the first frame update
     void Start()
@@ -86,11 +86,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (collider.tag == "Coin")
         {
-            if(i == 0)
-            {
-                Debug.Log("Player touches coin");
+            //if(i == 0)
+            //{
+                Debug.Log("Player picked up coin!");
+                Coins ++;
+                Destroy(collider.gameObject);
                 i++;
-            }
+            //}
             
         }
     }

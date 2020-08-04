@@ -45,7 +45,7 @@ public class Grounded : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    /*private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Coin")
         {
             //Debug.Log("Plyaer gound thing coollider iwth coin");
