@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    public int amountOfDoubleJumps;
-    private int extraJumps;
-    public bool canDoubleJump; //Can be private after?
-    public float speed;
-    public float jumpForce;
-    public bool isGrounded; //can be private after? or just return bool within isGroundedMethod
-    private Rigidbody2D rb;
-    public Animator animator;
-    public Vector3 respawnPoint;
+    [Header("Stats")]
     public int Lives;
     public int HP;
     public int maxHP = 100;
     public int Coins;
+    [SerializeField]
+    private int amountOfDoubleJumps;
+    private int extraJumps;
+    private Rigidbody2D rb;
     public HealthBar healthBar;
-    private int i = 0; //Used to verify coin triggering
-
+    public Animator animator;
+    public Vector3 respawnPoint;
+    [Header("Debugging")]
+    [SerializeField]
+    private bool canDoubleJump;
+    [SerializeField]
+    private bool playerGrounded;
+    [SerializeField]
+    private float jumpForce;
+    [SerializeField]
+    private float speed;
+ 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
 
-        isGroundedMethod(); 
-        canDoubleJump = true;
+        isGrounded(); 
         amountOfDoubleJumps = 1;
         
         Lives = 3;
@@ -41,11 +45,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (amountOfDoubleJumps > 3){amountOfDoubleJumps = 3;}
-        if(isGroundedMethod()){extraJumps = amountOfDoubleJumps;}
+        if(isGrounded()){extraJumps = amountOfDoubleJumps;}
         
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += horizontal * Time.deltaTime * speed;
-
         animator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
         Vector3 characterScale = transform.localScale;
@@ -57,15 +60,14 @@ public class PlayerController : MonoBehaviour
         {
             characterScale.x = -1;
         }
-
         transform.localScale = characterScale;
 
-        if (Input.GetButtonDown("Jump") && isGroundedMethod())
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
         }
-        else if (Input.GetButtonDown("Jump") && !isGroundedMethod() && canDoubleJump && amountOfDoubleJumps > 0)
+        else if (Input.GetButtonDown("Jump") && !isGrounded() && canDoubleJump && amountOfDoubleJumps > 0)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
@@ -81,43 +83,19 @@ public class PlayerController : MonoBehaviour
             Lives --;
             HP = maxHP;
             healthBar.SetHealth(maxHP);
-            Debug.Log("Respawn");
         }
         else if (collider.tag == "Coin")
         {
-            //if(i == 0)
-            //{
-                Debug.Log("Player picked up coin!");
-                Coins ++;
-                Destroy(collider.gameObject);
-                i++;
-            //}
-            
+            Coins ++;
+            Destroy(collider.gameObject);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.tag == "Coin")
-        {
-            if (i == 1)
-            {
-                i = 0;
-            }
-        }
-    }
-    
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Blobby") //Could change to layer mask with name of enemy in future - for different types of enemies
         {
             TakeDamage(10);
         }
-
-        if (collision.collider.tag == "PlayerGroundDetector")
-        {
-            Debug.Log("Collided with child");
-        }
-        
     }
 
     private void TakeDamage(int damage)
@@ -126,16 +104,14 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(HP);
     }
 
-    private bool isGroundedMethod() //rename isGrounded after
+    private bool isGrounded() //rename isGrounded after
     {
         float distance = 1.5f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, LayerMask.GetMask("Ground"));
         if (hit.collider != null)
         {
-            Debug.DrawRay(transform.position, Vector2.down * distance, Color.green);
-            Debug.Log(hit.collider);
             canDoubleJump = true;
-            isGrounded = true;
+            playerGrounded = true;
             animator.SetBool("isJumping", false);
             return true;
         }
@@ -143,13 +119,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawRay(transform.position, Vector2.down * distance, Color.red);
             animator.SetBool("isJumping", true);
-            isGrounded = false;
+            playerGrounded = false;
             return false;
         }
     }
-
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag =)
-    }*/
 }
