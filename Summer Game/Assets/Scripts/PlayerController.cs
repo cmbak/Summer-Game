@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
 {
 
     public int amountOfDoubleJumps;
-    public bool canDoubleJump;
+    public bool canDoubleJump; //Can be private after?
     public float speed;
     public float jumpForce;
-    public bool isGrounded = false;
+    public bool isGrounded; //can be private after? or just return bool within isGroundedMethod
     private Rigidbody2D rb;
     public Animator animator;
     public Vector3 respawnPoint;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
 
-        isGrounded = true; 
+        isGroundedMethod(); 
         canDoubleJump = true;
         amountOfDoubleJumps = 1;
         
@@ -59,6 +59,14 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = characterScale;
 
+        if (Input.GetButtonDown("Jump") && isGroundedMethod())
+        {
+            Debug.Log("Jump");
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            animator.SetBool("isJumping", true);
+
+
+        }
         /*if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -127,9 +135,23 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(HP);
     }
 
-    private bool isGrounded()
+    private bool isGroundedMethod() //rename isGrounded after
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, );
+        float distance = 1.5f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, LayerMask.GetMask("Ground"));
+        if (hit.collider != null)
+        {
+            Debug.DrawRay(transform.position, Vector2.down * distance, Color.green);
+            Debug.Log(hit.collider);
+            isGrounded = true;
+            return true;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, Vector2.down * distance, Color.red);
+            isGrounded = false;
+            return false;
+        }
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)
