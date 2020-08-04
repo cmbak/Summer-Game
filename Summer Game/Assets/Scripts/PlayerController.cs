@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = characterScale;
 
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        /*if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             amountOfDoubleJumps --;
             canDoubleJump = false;
             
-        }
+        }*/
     }
 
     //Respawn
@@ -125,6 +125,11 @@ public class PlayerController : MonoBehaviour
     {
         HP -= damage;
         healthBar.SetHealth(HP);
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, );
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)
