@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool canDoubleJump;
     [SerializeField]
-    private bool playerGrounded;
+    private bool playerGrounded; //Used for debugging, can be deleted later
     [SerializeField]
     private float jumpForce;
     [SerializeField]
