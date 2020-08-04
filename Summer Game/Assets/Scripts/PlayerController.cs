@@ -136,11 +136,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log(hit.collider);
             canDoubleJump = true;
             isGrounded = true;
+            animator.SetBool("isJumping", false);
             return true;
         }
         else
         {
             Debug.DrawRay(transform.position, Vector2.down * distance, Color.red);
+            animator.SetBool("isJumping", true);
             isGrounded = false;
             return false;
         }
