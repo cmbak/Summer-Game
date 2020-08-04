@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public int amountOfDoubleJumps;
+    private int extraJumps;
     public bool canDoubleJump; //Can be private after?
     public float speed;
     public float jumpForce;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (amountOfDoubleJumps > 3){amountOfDoubleJumps = 3;}
-        
+        if(isGroundedMethod()){extraJumps = amountOfDoubleJumps;}
         
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += horizontal * Time.deltaTime * speed;
@@ -61,25 +62,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGroundedMethod())
         {
-            Debug.Log("Jump");
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
-
-
         }
-        /*if (Input.GetButtonDown("Jump") && isGrounded == true)
+        else if (Input.GetButtonDown("Jump") && !isGroundedMethod() && canDoubleJump && amountOfDoubleJumps > 0)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
-        } 
-        else if (Input.GetButtonDown("Jump") && isGrounded == false && canDoubleJump == true && amountOfDoubleJumps > 0)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            animator.SetBool("isJumping", true);
-            amountOfDoubleJumps --;
             canDoubleJump = false;
-            
-        }*/
+        }
     }
 
     //Respawn
@@ -143,6 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawRay(transform.position, Vector2.down * distance, Color.green);
             Debug.Log(hit.collider);
+            canDoubleJump = true;
             isGrounded = true;
             return true;
         }
