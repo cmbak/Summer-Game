@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool playerGrounded; //Used for debugging, can be deleted later
     [SerializeField]
-    private float jumpForce;
+    private float jumpForce = 6;
     [SerializeField]
-    private float speed;
+    private float speed = 5;
  
     // Start is called before the first frame update
     void Start()

@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  rigid2d: {fileID: 8255673219080721215}
   castPoint: {fileID: 8255673218605303744}
   edgeDetector: {fileID: 8255673218670607192}
   groundDetector: {fileID: 8255673219370316856}

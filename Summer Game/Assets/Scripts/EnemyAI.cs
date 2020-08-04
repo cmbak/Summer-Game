@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public GameObject Player;
-    public Rigidbody2D rigid2d;
-    public Transform castPoint;
-    public Transform edgeDetector;
-    public Transform groundDetector;
+    [Header("Stats")]
+    public int health;
+    [Header("Debugging")]
     public float moveSpeed;
-    public float actualSpeed;
-    public float jumpForce;
-    public float attackRange;
-    public bool facingRight;
+    [SerializeField]
+    private float actualSpeed = 2;
+    [SerializeField]
+    private float jumpForce = 4;
+    [SerializeField]
+    private float attackRange = 5;
+    [SerializeField]
+    private bool facingRight = true;
     public float groundDistance;
-    public bool isAggro;
+    [SerializeField]
+    private bool isAggro = false;
     private bool isSearching;
     public Animator animator;
     private Vector3 enemyTransform;
-    public int health;
+    public GameObject Player;
+    private Rigidbody2D rigid2d;
+    public Transform castPoint;
+    public Transform edgeDetector;
+    public Transform groundDetector;
     
     // Start is called before the first frame update
     void Start()
     {
+        rigid2d = GetComponent<Rigidbody2D>();
         enemyTransform = transform.localScale;
         facingRight = true;
     }
@@ -142,17 +150,19 @@ public class EnemyAI : MonoBehaviour
         isAggro = false;
         isSearching = false;
 
-        RaycastHit2D edgeDetection = Physics2D.Raycast(edgeDetector.position, Vector2.down, 5f);
+        RaycastHit2D edgeDetection = Physics2D.Raycast(edgeDetector.position, Vector2.down, 2f, LayerMask.GetMask("Ground"));
         if (edgeDetection.collider != null && edgeDetection.collider.tag != "Respawn") 
         { 
-            if (edgeDetection.collider.tag == "Ground")
+            if (edgeDetection.collider.tag == "Ground" || edgeDetection.collider.tag == "Platform")
             {
                 Debug.Log("Collided with ground");
+                Debug.Log(gameObject + "Moving");
                 move();
             }
             else if (edgeDetection.collider.tag == "Coin")
             {
                 Debug.Log("Collided with coin");
+                Debug.Log(gameObject + "Moving");
                 move();
             }
             
