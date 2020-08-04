@@ -127,4 +127,10 @@ public class PlayerController : MonoBehaviour
     {
         dust.Play();
     }
+
+    public IEnumerator Knockback (float knockDuration, float knockbackPower, Vector3 knockbackDirection)
+    {
+        float timer = 0; //used to count the time
+
+    }
 }
