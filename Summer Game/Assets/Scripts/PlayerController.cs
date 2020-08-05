@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(jumpOnEnemy()){Debug.Log("Test");}
         if (amountOfDoubleJumps > 3){amountOfDoubleJumps = 3;}
         if(isGrounded()){extraJumps = amountOfDoubleJumps;}
         
@@ -144,5 +145,23 @@ public class PlayerController : MonoBehaviour
 
         yield return 0; //when condition is met, stop the IEnumerator
 
+    }
+
+    private bool jumpOnEnemy()
+    {
+        float distance = 1f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, LayerMask.GetMask("Enemy"));
+        
+        if (hit.collider != null)
+        {
+            Debug.Log(GetComponent<Collider>());
+            return true;
+            //Enemy is beneath player
+            //Enemy should take damage (50% of its health)
+            //Player should jump straight in air after colliding
+        }
+        else{
+            return false;
+        }
     }
 }
