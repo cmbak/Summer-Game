@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(jumpOnEnemy()){Debug.Log("Test");}
+        if(jumpOnEnemy()){Debug.Log("Test");} //Does this need an if statment or should it run every frame?
         if (amountOfDoubleJumps > 3){amountOfDoubleJumps = 3;}
         if(isGrounded()){extraJumps = amountOfDoubleJumps;}
         
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = characterScale;
 
+        //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -75,16 +76,19 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJumping", true);
             canDoubleJump = false;
         }
+
+        //Health
+        if (HP == 0)
+        {
+            Respawn();
+        }
     }
 
     //Respawn
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Respawn")  //change to switch statements if necessary
         {
-            transform.position = respawnPoint;
-            Lives --;
-            HP = maxHP;
-            healthBar.SetHealth(maxHP);
+            Respawn();
         }
         else if (collider.tag == "Coin")
         {
@@ -157,23 +161,25 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log(GetComponent<Collider>()); //Need to getGameObject
-            Debug.Log(hit.collider.tag); // Gets tag of what the ray cast has collided with, from there i could get the game object
+            Debug.Log(hit.collider.tag); // Gets tag of what the ray cast has collided with
             Debug.Log(GameObject.FindWithTag(hit.collider.tag));
-            //Destroy(GameObject.FindWithTag(hit.collider.tag)); // THIS WORKS AHHHHHH
-            Debug.Log("Enemy should take damage why why why work");
-            //Debug.Log(enemyAI.health);
+            //Destroy(GameObject.FindWithTag(hit.collider.tag)); //Immediate death of enemy
             EnemyAI enemyToDamage = GameObject.FindGameObjectWithTag(hit.collider.tag).GetComponent<EnemyAI>();
             Debug.Log(enemyToDamage.health);
             enemyToDamage.TakeDamage(25);
-            //enemyAI.TakeDamage(50);
-            //Print(enemyAI.health);
             return true;
             //Enemy is beneath player
             //Enemy should take damage (50% of its health)
             //Player should jump straight in air after
         }
-        else{
-            return false;
-        }
+        return false;
+    }
+
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
+        Lives --;
+        HP = maxHP;
+        healthBar.SetHealth(maxHP);
     }
 }
