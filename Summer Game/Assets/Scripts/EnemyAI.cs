@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
     private Vector3 enemyTransform;
     public GameObject Player;
+    private PlayerController playerScript;
     private Rigidbody2D rigid2d;
     public Transform castPoint;
     public Transform edgeDetector;
@@ -26,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rigid2d = GetComponent<Rigidbody2D>();
         enemyTransform = transform.localScale;
         facingRight = true;
@@ -203,4 +205,25 @@ public class EnemyAI : MonoBehaviour
         }
         return grounded;
     }
+
+    // private void OnCollisionEnter2D(Collision2D collision){
+    //     if (collision.collider.tag == "Player")
+    //     {
+    //         // if(transform.position.x > Player.transform.position.x) //if enemy is to the left of the PLAYER
+    //         // {
+    //         //     StartCoroutine(playerScript.Knockback(0.02f, 10, -Player.transform.position));
+    //         // }
+    //         // else if (transform.position.x < Player.transform.position.x) //if enemy is to the RIGHT of the player
+    //         // {
+    //         //     StartCoroutine(playerScript.Knockback(0.02f, 10, Player.transform.position));
+    //         // }
+    //         if(Player.transform.localScale.x == 1){ //this might work? if not, remove it
+    //             StartCoroutine(playerScript.Knockback(0.01f, 0.2f, -Player.transform.position));         
+    //         }
+    //         else if(Player.transform.localScale.x == -1)
+    //         {
+    //             StartCoroutine(playerScript.Knockback(0.01f, 0.2f, Player.transform.position));
+    //         }
+    //     }
+    // }
 }   

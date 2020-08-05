@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.tag == "Blobby") //Could change to layer mask with name of enemy in future - for different types of enemies
         {
             TakeDamage(10);
-            StartCoroutine(Knockback(0.02f, 100, transform.position)); //pause at this line until ienumerator finishes
+            //StartCoroutine(Knockback(0.02f, 100, -transform.position)); //pause at this line until ienumerator finishes
         }
     }
 
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         dust.Play();
     }
 
-    public IEnumerator Knockback (float knockDuration, float knockbackPower, Vector3 knockbackDirection)
+    public IEnumerator Knockback(float knockDuration, float knockbackPower, Vector3 knockbackDirection)
     {
         float timer = 0; //used to count the time
 
