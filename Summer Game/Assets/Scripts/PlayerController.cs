@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool playerGrounded; //Used for debugging, can be deleted later
     [SerializeField] private float jumpForce = 6;
     [SerializeField] private float speed = 5;
+    //private EnemyAI enemyAI;
  
     // Start is called before the first frame update
     void Start()
     {
+        //enemyAI = GetComponent<EnemyAI>();
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
 
@@ -154,11 +156,21 @@ public class PlayerController : MonoBehaviour
         
         if (hit.collider != null)
         {
-            Debug.Log(GetComponent<Collider>());
+            Debug.Log(GetComponent<Collider>()); //Need to getGameObject
+            Debug.Log(hit.collider.tag); // Gets tag of what the ray cast has collided with, from there i could get the game object
+            Debug.Log(GameObject.FindWithTag(hit.collider.tag));
+            //Destroy(GameObject.FindWithTag(hit.collider.tag)); // THIS WORKS AHHHHHH
+            Debug.Log("Enemy should take damage why why why work");
+            //Debug.Log(enemyAI.health);
+            EnemyAI enemyToDamage = GameObject.FindGameObjectWithTag(hit.collider.tag).GetComponent<EnemyAI>();
+            Debug.Log(enemyToDamage.health);
+            enemyToDamage.TakeDamage(25);
+            //enemyAI.TakeDamage(50);
+            //Print(enemyAI.health);
             return true;
             //Enemy is beneath player
             //Enemy should take damage (50% of its health)
-            //Player should jump straight in air after colliding
+            //Player should jump straight in air after
         }
         else{
             return false;

@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
         rigid2d = GetComponent<Rigidbody2D>();
         enemyTransform = transform.localScale;
         facingRight = true;
+        health = 50;
     }
 
     // Update is called once per frame
@@ -206,6 +207,12 @@ public class EnemyAI : MonoBehaviour
         return grounded;
     }
 
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("Enemy should take damage");
+        health -= damage;
+        Debug.Log(health);
+    }
     // private void OnCollisionEnter2D(Collision2D collision){
     //     if (collision.collider.tag == "Player")
     //     {
