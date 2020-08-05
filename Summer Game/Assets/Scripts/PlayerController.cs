@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.tag == "Blobby") //Could change to layer mask with name of enemy in future - for different types of enemies
         {
             TakeDamage(10);
+            StartCoroutine(Knockback(0.02f, 100, transform.position)); //pause at this line until ienumerator finishes
         }
     }
 
@@ -131,6 +132,17 @@ public class PlayerController : MonoBehaviour
     public IEnumerator Knockback (float knockDuration, float knockbackPower, Vector3 knockbackDirection)
     {
         float timer = 0; //used to count the time
+
+        while (knockDuration > timer) 
+        {
+            timer += Time.deltaTime;
+            rb.AddForce(new Vector3(knockbackDirection.x * -100, knockbackDirection.y * knockbackPower, transform.position.z));
+            // -100 to knockback player in opposite direction they're facing
+            //y * power to knockback player relative to the amount of power
+            //don't want to alter the player's z position 
+        }
+
+        yield return 0; //when condition is met, stop the IEnumerator
 
     }
 }
