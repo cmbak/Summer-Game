@@ -5,6 +5,7 @@ using UnityEngine;
 public class RespawnFlag : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    private PlayerController player;
 
     //Could verify input of string
     public string colour;
@@ -14,13 +15,22 @@ public class RespawnFlag : MonoBehaviour
     void Start()
     {
       animator = GetComponent<Animator>();
-      colour = "Blue";  
+      player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Colour verification
+       CheckColour();
+
+    }
+
+    //private void OnTriggerEnter2D(Collider2D collider) {
+        //if()
+    //}
+    private void CheckColour()
+    {
         switch (colour.ToLower())
         {
             case "red":
@@ -56,4 +66,14 @@ public class RespawnFlag : MonoBehaviour
                 break;
         }
     }
+
+    // private void ChangeRespawnPoint()
+    // {
+
+    // }
+    
 }
+
+//when player touches respawn flag - On trigger enter, collider tag is RespawnFlag
+//their respawn point should be coords of flag
+

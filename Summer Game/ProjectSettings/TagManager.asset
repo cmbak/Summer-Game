@@ -9,6 +9,7 @@ TagManager:
   - Blobby
   - Platform
   - PlayerGroundDetector
+  - RespawnFlag
   layers:
   - Default
   - TransparentFX

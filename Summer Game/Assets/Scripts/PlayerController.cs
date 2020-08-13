@@ -95,6 +95,13 @@ public class PlayerController : MonoBehaviour
             Coins ++;
             Destroy(collider.gameObject);
         }
+        else if (collider.tag == "RespawnFlag")
+        {
+            Debug.Log("Collided with respawn flag");
+            Debug.Log($"Current Position: {transform.position}");
+            respawnPoint = transform.position;
+            Debug.Log($"Respawn point: {respawnPoint}");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
