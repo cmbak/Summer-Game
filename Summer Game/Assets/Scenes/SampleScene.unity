@@ -1599,31 +1599,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1 &1174958455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2602988259327203512, guid: f82ac72fc9bbd964a8b098e8efad6b25,
-    type: 3}
-  m_PrefabInstance: {fileID: 2602988258153310671}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1174958456
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174958455}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d70d6d8fa704f4a4a9136aff91014b44, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1183257614
 GameObject:
   m_ObjectHideFlags: 0
@@ -7598,6 +7573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171481673268262863, guid: f82ac72fc9bbd964a8b098e8efad6b25,
+        type: 3}
+      propertyPath: colour
+      value: REd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82ac72fc9bbd964a8b098e8efad6b25, type: 3}
