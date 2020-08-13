@@ -165,8 +165,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log(GameObject.FindWithTag(hit.collider.tag));
             //Destroy(GameObject.FindWithTag(hit.collider.tag)); //Immediate death of enemy
             EnemyAI enemyToDamage = GameObject.FindGameObjectWithTag(hit.collider.tag).GetComponent<EnemyAI>();
+            enemyToDamage.TakeDamage(10);
+            rb.AddForce(new Vector2(0f, 3), ForceMode2D.Impulse);
             Debug.Log(enemyToDamage.health);
-            enemyToDamage.TakeDamage(25);
+            
+            //StartCoroutine(Knockback(0.01f, 0.1f, transform.position));
+            
             return true;
             //Enemy is beneath player
             //Enemy should take damage (50% of its health)
