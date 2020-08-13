@@ -6,11 +6,7 @@ public class RespawnFlag : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     private PlayerController player;
-
-    //Could verify input of string
     public string colour;
-    //or switch statments using booleans
-    //[SerializeField] pri
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +19,8 @@ public class RespawnFlag : MonoBehaviour
     {
         //Colour verification
        CheckColour();
-
     }
 
-    //private void OnTriggerEnter2D(Collider2D collider) {
-        //if()
-    //}
     private void CheckColour()
     {
         switch (colour.ToLower())
@@ -66,14 +58,4 @@ public class RespawnFlag : MonoBehaviour
                 break;
         }
     }
-
-    // private void ChangeRespawnPoint()
-    // {
-
-    // }
-    
 }
-
-//when player touches respawn flag - On trigger enter, collider tag is RespawnFlag
-//their respawn point should be coords of flag
-
