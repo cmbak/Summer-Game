@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -45,10 +46,12 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Debug.Log("Loading Main Menu...");
+        //SceneManager.LoadScene("Menu"); //create variable for menu scene and actually create the menu scene
     }
 
     public void QuitGame()
     {
         Debug.Log("Quiting Game...");
+        Application.Quit();
     }
 }
