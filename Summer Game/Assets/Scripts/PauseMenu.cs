@@ -45,6 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         Debug.Log("Loading Main Menu...");
         //SceneManager.LoadScene("Menu"); //create variable for menu scene and actually create the menu scene
     }
@@ -52,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quiting Game...");
-        Application.Quit();
+        Application.Quit(); //Will this work for web gl? 
+        //If not, create a quit scene
     }
 }
