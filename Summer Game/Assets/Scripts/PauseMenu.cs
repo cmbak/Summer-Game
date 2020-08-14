@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    public static bool gameIsPaused = false; //static because it's used for the TYPE rather than an instance of an object? - clarify
     public GameObject pauseMenuUI;
 
     void Start()
@@ -19,18 +19,16 @@ public class PauseMenu : MonoBehaviour
        {
            if (gameIsPaused)
            {
-               Resume();//Resume game
+               Resume();
            }
            else
            {
                Pause();
-               //Pause game
-               //gameIsPaused = true;
            }
        }
     }
 
-    private void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -42,5 +40,15 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0.5f; //change to 0 after
         gameIsPaused = true;    
+    }
+
+    public void MainMenu()
+    {
+        Debug.Log("Loading Main Menu...");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quiting Game...");
     }
 }
