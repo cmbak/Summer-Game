@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPoint;
     [Header("Debugging")]
     [SerializeField] private bool canDoubleJump;
-    [SerializeField] private bool playerGrounded; //Used for debugging, can be deleted later
+    //[SerializeField] private bool playerGrounded; //Used for debugging, can be deleted later
     [SerializeField] private float jumpForce = 6;
     [SerializeField] private float speed = 5;
     //private EnemyAI enemyAI;
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             canDoubleJump = true;
-            playerGrounded = true;
+            //playerGrounded = true;
             animator.SetBool("isJumping", false);
             return true;
         }
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawRay(transform.position, Vector2.down * distance, Color.red);
             animator.SetBool("isJumping", true);
-            playerGrounded = false;
+            //playerGrounded = false;
             return false;
         }
     }

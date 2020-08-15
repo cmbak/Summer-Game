@@ -175,7 +175,6 @@ MonoBehaviour:
   animator: {fileID: 8317791040792314082}
   respawnPoint: {x: -8.18, y: -1.665, z: 0}
   canDoubleJump: 0
-  playerGrounded: 0
   jumpForce: 6
   speed: 5
 --- !u!1 &8317791041433446037
