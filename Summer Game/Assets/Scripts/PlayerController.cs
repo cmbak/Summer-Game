@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -102,6 +103,13 @@ public class PlayerController : MonoBehaviour
             respawnPoint = transform.position;
             Debug.Log($"Respawn point: {respawnPoint}");
         }
+        else if (collider.tag == "Finish")
+        {
+            Debug.Log("Next level...");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Loads next scene within build settings
+            //SceneManager.LoadScene(0); Loads main menu
+        }    
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

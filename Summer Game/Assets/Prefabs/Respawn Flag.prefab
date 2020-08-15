@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  colour: REd
+  colour: blue
 --- !u!61 &2451278972458513516
 BoxCollider2D:
   m_ObjectHideFlags: 0

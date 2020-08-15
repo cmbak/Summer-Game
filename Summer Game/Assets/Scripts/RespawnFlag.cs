@@ -5,15 +5,13 @@ using UnityEngine;
 public class RespawnFlag : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    private PlayerController player;
     public string colour;
     // Start is called before the first frame update
     void Start()
     {
       animator = GetComponent<Animator>();
-      player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+      CheckColour();
     }
-
     // Update is called once per frame
     void Update()
     {
