@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour
 {
@@ -20,14 +21,32 @@ public class DeathMenu : MonoBehaviour
         if (player.Lives == 0 && player.HP == 0)
         {
             ShowMenu();
-            Debug.Log("just die");
         }
     }
 
     private void ShowMenu()
     {
         deathMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        Debug.Log("Die");
+        Debug.Log("Show death menu");
+    }
+
+    public void Restart()
+    {
+        //Chose current level from SceneManager
+        Debug.Log("Restart level");
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        Debug.Log("Loading Main Menu...");
+        SceneManager.LoadScene("Main");
+    }
+    
+    public void QuitGame()
+    {
+        Debug.Log("Quiting Game...");
+        Application.Quit(); //Will this work for web gl? 
+        //If not, create a quit scene
     }
 }
