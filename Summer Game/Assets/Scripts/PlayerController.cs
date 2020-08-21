@@ -79,13 +79,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //Health
-        if (HP == 0)
+        if (HP == 0 && Lives != 0)
         {
             Respawn();
         }
-        else if (HP == 0 && Lives == 0)
+        else if (Lives == 0 && HP == 0)
         {
-            Destroy(this.gameObject); // player dpesnt get destoeued
+            Destroy(this.gameObject);
             Debug.Log("Destroy player");
         }
     }
