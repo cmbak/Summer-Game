@@ -6,32 +6,40 @@ public class CameraFollow : MonoBehaviour
 {
 
     private Vector2 velocity;
-    public float smoothTimeX = 5;
-    public float smoothTimeY = 5;
+    public float smoothTimeX;
+    public float smoothTimeY;
 
+    public Transform zoomTarget;
     public bool wantBounds;
     public Vector3 minCameraPos;
     public Vector3 maxCameraPos;
     private Transform playerTransform; //player movement
     private PlayerController player;
-    // Start is called before the first frame update
+    
+    [Header("Camera Movement")]
     [SerializeField] private Vector3 initialPosition;
     [SerializeField] private bool trackPlayer;
+    [SerializeField] private float zoomTimeSpeed;
+    
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         initialPosition = transform.position;
         trackPlayer = true;
+        smoothTimeX = 0.2f;
+        smoothTimeY = 0.4f;
+        zoomTimeSpeed = 1.5f;
     }
     
     void Update() {
 
-        if (player.Lives == 0) {
+        if (player.Lives == 0 && player.HP == 0) {
             //Player dead
             Debug.Log("Player dead");
             Time.timeScale = 0.5f;
             trackPlayer = false;
+            zoomOut();
         }
     }
 
@@ -52,6 +60,13 @@ public class CameraFollow : MonoBehaviour
 
             transform.position = new Vector3(smoothPosX, smoothPosY, transform.position.z);
         }
+    }
+
+    private void zoomOut() {
+        float zoomPosX = Mathf.SmoothDamp(transform.position.x, zoomTarget.position.x, ref velocity.x, smoothTimeX * zoomTimeSpeed);
+        float zoomPosY = Mathf.SmoothDamp(transform.position.y, zoomTarget.position.y, ref velocity.y, smoothTimeY * zoomTimeSpeed);
+        
+        transform.position = new Vector3(zoomPosX, zoomPosY, transform.position.z);
     }
     
 }

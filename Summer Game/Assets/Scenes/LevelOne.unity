@@ -314,11 +314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a834e175dcd712744b0971ddf155ee2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTimeX: 0.05
-  smoothTimeY: 0.05
+  zoomTarget: {fileID: 1173253272}
   wantBounds: 1
   minCameraPos: {x: -100, y: -4, z: -10}
   maxCameraPos: {x: 100, y: 10, z: -10}
+  initialPosition: {x: 0, y: 0, z: 0}
+  trackPlayer: 0
+  zoomTimeMultiplyer: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
