@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPoint;
     [Header("Debugging")]
     [SerializeField] private bool canDoubleJump;
-    //[SerializeField] private bool playerGrounded; //Used for debugging, can be deleted later
     [SerializeField] private float jumpForce = 6;
     [SerializeField] private float speed = 5;
     //private EnemyAI enemyAI;
@@ -43,26 +42,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(jumpOnEnemy()){Debug.Log("Test");} //Does this need an if statment or should it run every frame?
-        if (amountOfDoubleJumps > 3){amountOfDoubleJumps = 3;}
-        if(isGrounded()){extraJumps = amountOfDoubleJumps;}
+        if (jumpOnEnemy()) { Debug.Log("Test"); } //Does this need an if statment or should it run every frame?
+        if (amountOfDoubleJumps > 3) { amountOfDoubleJumps = 3; }
+        if (isGrounded()) { extraJumps = amountOfDoubleJumps; }
         
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += horizontal * Time.deltaTime * speed;
         animator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
-        Vector3 characterScale = transform.localScale;
-        if(Input.GetAxis("Horizontal") > 0) //Moving right
-        {
-            characterScale.x = 1;
-            //CreateDust();
-        }
-        else if (Input.GetAxis("Horizontal") < 0) //Moving left
-        {
-            characterScale.x = -1;
-            //CreateDust();
-        }
-        transform.localScale = characterScale;
+        Flip();
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded())
@@ -90,6 +78,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Flip
+    private void Flip() {
+        Vector3 characterScale = transform.localScale;
+        
+        if (Input.GetAxis("Horizontal") > 0) //Moving right
+            {
+                characterScale.x = 1;
+                //CreateDust();
+            }
+            else if (Input.GetAxis("Horizontal") < 0) //Moving left
+            {
+                characterScale.x = -1;
+                //CreateDust();
+            }
+        transform.localScale = characterScale;
+    }
+    
     //Respawn
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Respawn")  //change to switch statements if necessary
@@ -131,14 +136,13 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(HP);
     }
 
-    private bool isGrounded() //rename isGrounded after
+    private bool isGrounded()
     {
         float distance = 1.5f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, LayerMask.GetMask("Ground"));
         if (hit.collider != null)
         {
             canDoubleJump = true;
-            //playerGrounded = true;
             animator.SetBool("isJumping", false);
             return true;
         }
@@ -146,7 +150,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawRay(transform.position, Vector2.down * distance, Color.red);
             animator.SetBool("isJumping", true);
-            //playerGrounded = false;
             return false;
         }
     }
@@ -183,7 +186,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log(GetComponent<Collider>()); //Need to getGameObject
             Debug.Log(hit.collider.tag); // Gets tag of what the ray cast has collided with
             Debug.Log(GameObject.FindWithTag(hit.collider.tag));
-            //Destroy(GameObject.FindWithTag(hit.collider.tag)); //Immediate death of enemy
             EnemyAI enemyToDamage = GameObject.FindGameObjectWithTag(hit.collider.tag).GetComponent<EnemyAI>();
             enemyToDamage.TakeDamage(10);
             rb.AddForce(new Vector2(0f, 3), ForceMode2D.Impulse);
