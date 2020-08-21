@@ -27,7 +27,6 @@ public class DeathMenu : MonoBehaviour
     private void ShowMenu()
     {
         deathMenuUI.SetActive(true);
-        Debug.Log("Show death menu");
     }
 
     public void Restart()

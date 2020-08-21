@@ -36,7 +36,6 @@ public class CameraFollow : MonoBehaviour
 
         if (player.Lives == 0 && player.HP == 0) {
             //Player dead
-            Debug.Log("Player dead");
             Time.timeScale = 0.5f;
             trackPlayer = false;
             zoomOut();
