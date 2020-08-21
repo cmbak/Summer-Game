@@ -13,10 +13,26 @@ public class CameraFollow : MonoBehaviour
     public Vector3 minCameraPos;
     public Vector3 maxCameraPos;
     private Transform playerTransform; //player movement
+    private PlayerController player;
     // Start is called before the first frame update
+    [SerializeField] private Vector3 initialPosition;
+    [SerializeField] private bool trackPlayer;
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        initialPosition = transform.position;
+        trackPlayer = true;
+    }
+    
+    void Update() {
+
+        if (player.Lives == 0) {
+            //Player dead
+            Debug.Log("Player dead");
+            Time.timeScale = 0f;
+            trackPlayer = false;
+        }
     }
 
     void FixedUpdate()
@@ -30,12 +46,12 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        if (trackPlayer) {
+            float smoothPosX = Mathf.SmoothDamp(transform.position.x, playerTransform.position.x, ref velocity.x, smoothTimeX); //passes the current velocity of the camera by ref
+            float smoothPosY = Mathf.SmoothDamp(transform.position.y, playerTransform.position.y, ref velocity.y, smoothTimeY);
 
-        float smoothPosX = Mathf.SmoothDamp(transform.position.x, playerTransform.position.x, ref velocity.x, smoothTimeX); //passes the current velocity of the camera by ref
-        float smoothPosY = Mathf.SmoothDamp(transform.position.y, playerTransform.position.y, ref velocity.y, smoothTimeY);
-
-        transform.position = new Vector3(smoothPosX, smoothPosY, transform.position.z);
-    
+            transform.position = new Vector3(smoothPosX, smoothPosY, transform.position.z);
+        }
     }
     
 }

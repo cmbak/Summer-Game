@@ -83,6 +83,11 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
+        else if (HP == 0 && Lives == 0)
+        {
+            Destroy(this.gameObject); // player dpesnt get destoeued
+            Debug.Log("Destroy player");
+        }
     }
 
     //Respawn
