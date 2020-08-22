@@ -31,7 +31,7 @@ public class DeathMenu : MonoBehaviour
 
     public void Restart()
     {
-        //Chose current level from SceneManager
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//Chose current level from SceneManager
         Debug.Log("Restart level");
     }
 
