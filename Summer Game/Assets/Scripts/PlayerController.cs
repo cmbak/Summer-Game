@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
         else if (collider.tag == "Finish")
         {
             Debug.Log("Next level...");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Loads next scene within build settings
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Loads next scene within build settings
             //SceneManager.LoadScene(0); Loads main menu
         }    
         
