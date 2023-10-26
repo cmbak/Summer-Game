@@ -1,8 +1,3 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines'
-Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=18731 outsize=10338 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=5032 outsize=5412 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=11176 outsize=9684 ok=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:8f56523b2babdb2cfb541a0c001667bea767a0d5fc73e9f5621ff6e7c04bea7d
+size 378

@@ -1,23 +1,3 @@
-* [Overview](index.md)
-* [Scriptable Brushes](Brushes.md)
-  * [Coordinate Brush](CoordinateBrush.md)
-  * [GameObject Brush](GameObjectBrush.md)
-  * [Group Brush](GroupBrush.md)
-  * [Line Brush](LineBrush.md)
-  * [Random Brush](RandomBrush.md)
-  * [Tint Brush](TintBrush.md)
-  * [Tint Brush (Smooth)](TintBrushSmooth.md)
-  * [Prefab Brush](PrefabBrush.md)
-* [Scriptable Tiles](Tiles.md)
-  * [Animated Tile](AnimatedTile.md)
-  * [Pipeline Tile](PipelineTile.md)
-  * [Random Tile](RandomTile.md)
-  * [Rule Tile](RuleTile.md)
-  * [Rule Override Tile](RuleOverrideTile.md)
-  * [Terrain Tile](TerrainTile.md)
-  * [Weighted Random Tile](WeightedRandomTile.md)
-* [Other](Other.md)
-  * [Grid Information](GridInformation.md)
-  * [Custom Rules for Rule Tile](CustomRulesForRuleTile.md)
-  * [Contributors](Contributors.md)
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:c32f1b8ef4b0301c96975bd5ea1fc80ca2fd71a0e9397ad153dba0abd444a115
+size 813

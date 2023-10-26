@@ -1,22 +1,3 @@
-fileFormatVersion: 2
-guid: 686b0aef83c3f3941906891866a5993c
-TrueTypeFontImporter:
-  externalObjects: {}
-  serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
-  characterSpacing: 0
-  characterPadding: 1
-  includeFontData: 1
-  fontName: Piskwel
-  fontNames:
-  - Piskwel
-  fallbackFontReferences: []
-  customCharacters: 
-  fontRenderingMode: 0
-  ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:be3ca48d8c24d6773107c2ff5b4b2a4f0effa2d57681e86dd771719a9f525875
+size 492

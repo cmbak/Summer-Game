@@ -1,22 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class Hearts : MonoBehaviour
-{
-    public Sprite[] HeartSprites;
-    public Image HeartUI;
-    private PlayerController player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        HeartUI.sprite = HeartSprites[player.Lives];
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:486de83db94edf321aabf15618036239cede497dac33dc1d4785ca2a9fba7801
+size 541
