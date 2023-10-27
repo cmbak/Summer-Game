@@ -1,17 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1045 &1
-EditorBuildSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: cc3fb0625ca01d044856cc6f187cda0f
-  - enabled: 1
-    path: Assets/Scenes/LevelOne.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/LevelTwo.unity
-    guid: 958ec074ae60df3479404da259f52a6b
-  m_configObjects: {}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ceebecff5df257a656019ff1bb8f49d37c11ac31f3f135034c39658c005d1e7a
+size 444
