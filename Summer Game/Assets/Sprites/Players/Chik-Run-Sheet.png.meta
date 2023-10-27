@@ -1,3 +1,392 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1334b4b2122beb7fc28150b468a510e9ccc309973b7b85761d9ca1d1e5f888f3
-size 9173
+fileFormatVersion: 2
+guid: de84dd5ae03752443ab42fcc1ea49394
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6594468253998848112
+    second: Chik-Run-Sheet_0
+  - first:
+      213: -6186944491523713576
+    second: Chik-Run-Sheet_1
+  - first:
+      213: 6524894742962570197
+    second: Chik-Run-Sheet_2
+  - first:
+      213: 7996577675147773123
+    second: Chik-Run-Sheet_3
+  - first:
+      213: 2738607826285866802
+    second: Chik-Run-Sheet_4
+  - first:
+      213: -2326260645922518600
+    second: Chik-Run-Sheet_5
+  - first:
+      213: 384366005840390002
+    second: Chik-Run-Sheet_6
+  - first:
+      213: 7893473529929141300
+    second: Chik-Run-Sheet_7
+  - first:
+      213: 1068395725311870011
+    second: Chik-Run-Sheet_8
+  - first:
+      213: 114040871927604594
+    second: Chik-Run-Sheet_9
+  - first:
+      213: -8424852768227843511
+    second: Chik-Run-Sheet_10
+  - first:
+      213: -778729718954315204
+    second: Chik-Run-Sheet_11
+  - first:
+      213: -4841423594580287882
+    second: Chik-Run-Sheet_12
+  - first:
+      213: 1586795543393193431
+    second: Chik-Run-Sheet_13
+  - first:
+      213: -377456773603698994
+    second: Chik-Run-Sheet_14
+  - first:
+      213: -6584221779654919653
+    second: Chik-Run-Sheet_15
+  - first:
+      213: -1947521554018740247
+    second: Chik-Run-Sheet_16
+  - first:
+      213: 4497816942988254478
+    second: Chik-Run-Sheet_17
+  - first:
+      213: 6673195512146492406
+    second: Chik-Run-Sheet_18
+  - first:
+      213: -2430985170251058874
+    second: Chik-Run-Sheet_19
+  - first:
+      213: -5030415314072951500
+    second: Chik-Run-Sheet_20
+  - first:
+      213: 3789673595289114955
+    second: Chik-Run-Sheet_21
+  - first:
+      213: 302516734388977683
+    second: Chik-Run-Sheet_22
+  - first:
+      213: -7034552061462039622
+    second: Chik-Run-Sheet_23
+  - first:
+      213: 8956323994161396765
+    second: Chik-Run-Sheet_24
+  - first:
+      213: -6571009824058665465
+    second: Chik-Run-Sheet_25
+  - first:
+      213: -9002534668787635364
+    second: Chik-Run-Sheet_26
+  - first:
+      213: -4270209562200500625
+    second: Chik-Run-Sheet_27
+  - first:
+      213: -187194067624375636
+    second: Chik-Run-Sheet_28
+  - first:
+      213: 1395467406078485146
+    second: Chik-Run-Sheet_29
+  - first:
+      213: 8156324554494281426
+    second: Chik-Run-Sheet_30
+  - first:
+      213: 3166410131779466881
+    second: Chik-Run-Sheet_31
+  - first:
+      213: -6867197290230686548
+    second: Chik-Run-Sheet_0
+  - first:
+      213: 1449279644648666351
+    second: Chik-Run-Sheet_1
+  - first:
+      213: -4760578099206976681
+    second: Chik-Run-Sheet_2
+  - first:
+      213: 4516476613058177703
+    second: Chik-Run-Sheet_3
+  - first:
+      213: 1639075911445223130
+    second: Chik-Run-Sheet_4
+  - first:
+      213: 433452563252179251
+    second: Chik-Run-Sheet_5
+  - first:
+      213: -6378965765411889815
+    second: Chik-Run-Sheet_6
+  - first:
+      213: -3647419991589482807
+    second: Chik-Run-Sheet_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac5641d270d2b0a0800000000000000
+      internalID: -6867197290230686548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4fc7f7820ec1410800000000000000
+      internalID: 1449279644648666351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b834ff0770fedb0800000000000000
+      internalID: -4760578099206976681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa21bddc8fbdae30800000000000000
+      internalID: 4516476613058177703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad697957bda2fb610800000000000000
+      internalID: 1639075911445223130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331f0ab4fcee30600800000000000000
+      internalID: 433452563252179251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d1f3efe6c5977a0800000000000000
+      internalID: -6378965765411889815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chik-Run-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce86aea7d2c16dc0800000000000000
+      internalID: -3647419991589482807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

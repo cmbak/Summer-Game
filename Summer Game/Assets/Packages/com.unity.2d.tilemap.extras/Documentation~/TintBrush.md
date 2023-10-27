@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aeed62c4493904b6623d072021737665526f8a1c688d111afaede831395d1c71
-size 729
+# Tint Brush
+
+This Brush changes the color of Tiles placed on a Tilemap to the color selected.
+
+## Properties
+
+| Property  | Function                      |
+| --------- | ----------------------------- |
+| __Color__ | Select the Color of the tint. |
+
+## Usage
+
+Select the color to tint a Tile with in the Brush properties. Then use the Paint tool with the Brush to change the color of the Tiles you paint over.
+
+![Scene View with Tint Brush](images/TintBrush.png)
+
+## Implementation
+
+The TintBrush inherits from the GridBrush and implements the following overrides:
+
+- It overrides the Paint method to set the color of a Tile. 
+- It overrides the Erase method to be able to set the color of a Tile back to the default white color.

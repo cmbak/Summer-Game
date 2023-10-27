@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ec205fb43d5033a7b233fff067b5c3cb77a3016712853fb5a63d1e22165be66
-size 690
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class CoinAmount : MonoBehaviour
+{
+    public TextMeshProUGUI coinText;
+    private PlayerController Player;
+    private int amountOfCoins;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        coinText = coinText.GetComponent<TextMeshProUGUI>(); //Looks for the TMPUGUI component in the coinText object
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+      coinText.SetText($"x {Player.Coins.ToString()}");  
+    }
+}

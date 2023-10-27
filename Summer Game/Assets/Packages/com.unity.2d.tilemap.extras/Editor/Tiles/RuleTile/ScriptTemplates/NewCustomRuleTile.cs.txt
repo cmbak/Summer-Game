@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f9861dde8f625f4c09e66acf7bac43f6503997deb4c50f3a05ec5d93f3791950
-size 629
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+
+[CreateAssetMenu]
+public class #SCRIPTNAME# : RuleTile<#SCRIPTNAME#.Neighbor> {
+
+    public bool customField;
+
+    public class Neighbor : RuleTile.TilingRule.Neighbor {
+        public const int Null = 3;
+        public const int NotNull = 4;
+    }
+
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        switch (neighbor) {
+            case Neighbor.Null: return tile == null;
+            case Neighbor.NotNull: return tile != null;
+        }
+        return base.RuleMatch(neighbor, tile);
+    }
+}

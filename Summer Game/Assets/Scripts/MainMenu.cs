@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78bb435121722da74f8ebdc759af3b89748e564acdaf1f1fbdc32c3294b3f8d0
-size 681
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class MainMenu : MonoBehaviour
+{
+    //public Random random = new Random();
+    public TextMeshProUGUI splashText;
+    public string[] splashPhrases = {"Reminder: It is on Stark Tower", "500", "Butt sky!", ">:O"};
+
+    void Start()
+    {
+        splashText.SetText($"*{splashPhrases[Random.Range(0, splashPhrases.Length)]}*");
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("LevelOne");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quiting Game...");
+        Application.Quit();
+    }
+}

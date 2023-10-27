@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8cd093c45c110a2d3085634da7cc30cdc7e0b380012468c13b06417bcac8244f
-size 445
+# Coordinate Brush
+
+__Contributions by :__  [nicovain](https://github.com/nicovain), [pmurph0305](https://github.com/pmurph0305)
+
+This Brush displays the coordinates of the it is currently targeting in the Scene view. Use this Brush as an example for creating custom Brushes that display extra visualization features, such as cell coordinate information, while painting a Tilemap.
+
+![Scene View with Coordinate Brush](images/CoordinateBrush.png)
